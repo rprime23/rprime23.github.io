@@ -6,11 +6,11 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #fcfcfc;
-  --primary-color: #4756df;
-  --secondary-color: #ff7235;
-  --primary-shadow: #8b8eaf;
-  --secondary-shadow: #a17a69;
+  --bg-color: #060b4b;
+  --primary-color: #29843c;
+  --secondary-color: #a30000;
+  --primary-shadow: #000000;
+  --secondary-shadow: #ffffff;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
@@ -121,6 +121,7 @@ nav ul li {
 }
 
 .bio p {
+  font-size: 24px;
   line-height: var(--line-height);
   padding: 0.3rem 0;
 }
@@ -133,11 +134,13 @@ nav ul li {
 }
 
 .more-about h2 {
+  color: var(--primary-color);
   margin-bottom: var(--bottom-margin);
   text-align: center;
 }
 
 .more-about p {
+  color: #ffffff;
   line-height: var(--line-height);
   padding: 0.4rem;
 }
@@ -175,7 +178,7 @@ nav ul li {
 /* PROJECTS */
 
 .projects {
-  background-color: var(--bg-color);
+  background-color: white;
   padding: 32px 0;
   margin-top: 2rem;
 }
@@ -244,4 +247,15 @@ footer {
   padding: 1.25rem;
   text-align: center;
   margin: 2rem 0 0;
+}
+
+/* .main-screen-img{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 5px;
+} */
+
+.main-page-image{
+  text-align: center;
+  font-size: 24px;
 }
