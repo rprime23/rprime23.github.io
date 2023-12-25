@@ -107,6 +107,7 @@ nav ul li {
 .hero img {
   height: 37.5rem;
   width: 37.5rem;
+  margin-top: 5px;
 }
 
 .bio {
@@ -129,6 +130,7 @@ nav ul li {
 /* MORE ABOUT */
 
 .more-about {
+  margin-top: 5px;
   background-color: var(--bg-color);
   padding: 1rem 6rem;
 }
@@ -197,6 +199,8 @@ nav ul li {
 .projects-title {
   text-align: center;
   margin-bottom: 1rem;
+  background-color: #060b4b;
+  color: var(--primary-color);
 }
 
 .project-container {
@@ -249,13 +253,99 @@ footer {
   margin: 2rem 0 0;
 }
 
-/* .main-screen-img{
-  width: 98%;
-  margin-left: 1%;
-  margin-top: 5px;
-} */
+.main-screen-img{
+  width: 100%;
+  margin-top: 1px;
+}
 
 .main-page-image{
   text-align: center;
   font-size: 24px;
 }
+
+.project-desc {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 90%;
+  padding-bottom: 10px;
+}
+
+.project-desc p {
+  line-height: var(--line-height);
+  padding: 0.4rem;
+}
+
+/* .project-images {
+  display: grid;
+  width: 100%;
+} */
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.video {
+  text-align: center;
+}
+
+/* RESUME AND SOCIALS */
+
+/* Center the contact section */
+#contact {
+  text-align: center;
+}
+
+#contact h1 {
+  background-color: #060b4b;
+  color:#29843c;
+}
+
+/* Style the social buttons */
+.social-buttons {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.social-button-container {
+  display: inline-block;
+  margin: 0 10px; /* Adjust margin for spacing between buttons */
+}
+
+.social-button {
+  display: inline-block;
+  padding: 8px 16px; /* Adjust padding for the button size */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.social-button img {
+  max-width: 100%; /* Set a maximum width for the images */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.social-button:hover {
+  background-color: #253159; /* Set background color on hover (adjust as needed) */
+}
+
+/* Center the resume button */
+.resume-button {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.resume-button .social-button-container.resume {
+  display: block;
+  margin: 20px auto; /* Adjust the margin for spacing and centering */
+}
+
+.resume-button .social-button-container.resume .social-button {
+  padding: 10px 20px; /* Adjust padding for the resume button size */
+  background-color: #060b4b;
+}
+
