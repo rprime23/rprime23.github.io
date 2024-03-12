@@ -264,6 +264,8 @@ footer {
   font-size: 24px;
 }
 
+/* PROJECTS */
+
 .project-desc {
   display: block;
   margin-left: auto;
@@ -351,7 +353,7 @@ footer {
   background-color: #060b4b;
 }
 
-/* PROJECTS */
+/* Courses */
 
 .courses {
   background-color: white;
@@ -406,4 +408,8 @@ footer {
   box-shadow: 0 3px 10px var(--primary-shadow);
   padding: 20px;
   margin: 10px;
+}
+
+.see-more-text {
+  color: #0099ff;
 }
