@@ -413,3 +413,17 @@ footer {
 .see-more-text {
   color: #0099ff;
 }
+
+.models-lrg-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.image-change {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
