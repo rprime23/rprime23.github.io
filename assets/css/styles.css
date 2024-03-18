@@ -427,3 +427,36 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* #img-change {
+  grid-column: 1; /* Image spans 1 column 
+  grid-row: 1; /* Image spans 1 row 
+  justify-self: center; /* Horizontally center the image within the grid cell 
+  align-self: center; /* Vertically center the image within the grid cell 
+  max-width: 100%; /* Ensure image doesn't exceed container width 
+  max-height: 100%; /* Ensure image doesn't exceed container height 
+} */
+
+#img-change- {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+}
+
+#img-change-alien {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+}
+
+.grid-container-img {
+  display: grid;
+  width: 80%; /* Adjust as needed */
+  /*height: 500px; /* Fixed height for the grid container */
+  margin: 0 auto; /* Center the grid horizontally */
+  justify-content: center; /* Center the grid items horizontally */
+}
+
+.grid-container-img img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  height: 500px; /* Set a fixed height for the images */
+  object-fit: cover; /* Ensure images fill the fixed height without distortion */
+}

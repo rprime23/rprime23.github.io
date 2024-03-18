@@ -22,7 +22,7 @@
         <nav>
             <h1>REYNA MURPHY</h1>
             <ul class="navigation">
-              <li><a href="#human-male" class="nav-link">Human Male</a></li>
+              <li><a href="#Human-Male" class="nav-link">Human Male</a></li>
               <li><a href="3dAnimation" class="nav-link">3D Animation</a></li>
               <li><a href="..\..\index.html" class="nav-link">Return</a></li>
             </ul>
@@ -77,84 +77,100 @@
                 style="width: 90%; text-align: center"
                 />
             </div>
-            <div class="image-change" id="img-change">
+            <div class="grid-container-img">
                 <img 
                 src="../images/3D_Art/Human_Male/fingerSmooth.jpg"
                 alt="human finger 3D model"
                 loading="lazy"
                 class="change-image"
-                style="width: 80%; text-align: center"
+                
+                id="img-change"
                 />
-                <script type = "text/javascript">
-                    var image = document.getElementById("img-change");
-                    var currentPos = 0;
-                    var images = ["..\\images\\3D_Art\\Human_Male\\fingerSmooth.jpg", "..\\images\\3D_Art\\Human_Male\\handSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoSmooth.png",
-                                    "..\\images\\3D_Art\\Human_Male\\frontTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\backTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoLegSmooth.png",
-                                    "..\\images\\3D_Art\\Human_Male\\noDetailBodySmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoDetailSmooth.png", "..\\images\\3D_Art\\Human_Male\\headSmooth.png"];
-        
-                    function changeImageSrc() {
-                        if (++currentPos >= images.length)
-                            currentPos = 0;
-        
-                        image.src = images[currentPos];
-                    }
-        
-                    setInterval(changeImageSrc, 500);
+                <script type="text/javascript">
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var image = document.getElementById("img-change");
+                        var currentPos = 0;
+                        var images = ["..\\images\\3D_Art\\Human_Male\\fingerSmooth.jpg", "..\\images\\3D_Art\\Human_Male\\handSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoSmooth.png",
+                                        "..\\images\\3D_Art\\Human_Male\\frontTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\backTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoLegSmooth.png",
+                                        "..\\images\\3D_Art\\Human_Male\\noDetailBodySmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoDetailSmooth.png", "..\\images\\3D_Art\\Human_Male\\headSmooth.png"];
+                
+                        function changeImageSrc() {
+                            if (++currentPos >= images.length)
+                                currentPos = 0;
+                
+                            image.src = images[currentPos];
+                        }
+                
+                        setInterval(changeImageSrc, 3000);
+                    });
                 </script>
             </div>
-            <!-- <div class="row">
-                <div class="column">
-                    <img
-                    src="..\images\Floor_After_Floor\FAF_CoffeeShop.png"
-                    alt="Floor After Floor Coffee Shop"
-                    loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%"
-                    />
-                </div>
-                <div class="column">
-                    <img
-                    src="..\images\Floor_After_Floor\FAF_Store.png"
-                    alt="Floor After Floor Store"
-                    loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%"
-                    />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="column">
-                    <img
-                    src="../images/Floor_After_Floor/FAF_RoofHeli.png"
-                    alt="Floor After Floor Roof"
-                    loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%"
-                    />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="column">
-                    <img
-                    src="..\images\Floor_After_Floor\FAF_FoodCourtV1.png"
-                    alt="Floor After Floor Food Court"
-                    loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%"
-                    />
-                </div>
-                <div class="column">
-                    <img
-                    src="..\images\Floor_After_Floor\FAF_Arcade.png"
-                    alt="Floor After Floor Arcade"
-                    loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%"
-                    />
-                </div> 
-            </div> -->
         </div>
+
+        <!-- Alien Model -->
+        
+        <div id="alien-model">
+            <h2 class="projects-title">Alien Images</h2>
+            <div class="models-lrg-img">
+                <img 
+                src="..\images\3D_Art\Alien_Model\frontSmooth.png"
+                alt="alien 3D model"
+                loading="lazy"
+                class="front-image"
+                style="width: 90%; text-align: center"
+                />
+            </div>
+            <div class="grid-container-img">
+                <img 
+                src="..\images\3D_Art\Alien_Model\conceptFront.png"
+                alt="front concept image"
+                loading="lazy"
+                class="change-image"
+                
+                id="img-change-alien"
+                />
+                <script type="text/javascript">
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var image = document.getElementById("img-change-alien");
+                        var currentPos = 0;
+                        var imagesAlien = ["..\\images\\3D_Art\\Alien_Model\\conceptFront.png", "..\\images\\3D_Art\\Alien_Model\\conceptBack.png", "..\\images\\3D_Art\\Alien_Model\\conceptSide.png", 
+                                        "..\\images\\3D_Art\\Alien_Model\\frontLines.png", "..\\images\\3D_Art\\Alien_Model\\backLines.png", "..\\images\\3D_Art\\Alien_Model\\sideLines.png",
+                                        "..\\images\\3D_Art\\Alien_Model\\side2Lines.png", "..\\images\\3D_Art\\Alien_Model\\threeFourthsFlat.png", "..\\images\\3D_Art\\Alien_Model\\frontSmooth.png",
+                                        "..\\images\\3D_Art\\Alien_Model\\backSmooth.png", "..\\images\\3D_Art\\Alien_Model\\sideSmooth.png"];
+                
+                        function changeImageSrc() {
+                            if (++currentPos >= imagesAlien.length)
+                                currentPos = 0;
+                
+                            image.src = imagesAlien[currentPos];
+                        }
+                
+                        setInterval(changeImageSrc, 3000);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <!-- Environment Models -->
+
+        <div id="enviro-models">
+
+        </div>
+
+        <!-- Prop Models -->
+        
+        <div>
+
+        </div>
+
+        <!-- Character Models -->
+        
+        <div>
+
+        </div>
+
     </body>
+    <footer>
+        
+    </footer>
 </html>
