@@ -280,11 +280,6 @@ footer {
   padding: 0.4rem;
 }
 
-/* .project-images {
-  display: grid;
-  width: 100%;
-} */
-
 .row {
   display: flex;
 }
@@ -294,9 +289,7 @@ footer {
   padding: 5px;
 }
 
-.video {
-  text-align: center;
-}
+
 
 /* RESUME AND SOCIALS */
 
@@ -414,6 +407,23 @@ footer {
   color: #0099ff;
 }
 
+/* 3D Models Page */
+
+.front-image {
+  display: grid;
+  width: 80%; /* Adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center; /* Center the grid items horizontally */
+  margin-bottom: 50px;
+}
+
+.front-image img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  height: 800px; /* Set a fixed height for the images */
+  object-fit: cover; /* Ensure images fill the fixed height without distortion */
+}
+
 .models-lrg-img {
   display: block;
   margin-left: auto;
@@ -421,23 +431,7 @@ footer {
   width: 50%;
 }
 
-.image-change {
-  display: block;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* #img-change {
-  grid-column: 1; /* Image spans 1 column 
-  grid-row: 1; /* Image spans 1 row 
-  justify-self: center; /* Horizontally center the image within the grid cell 
-  align-self: center; /* Vertically center the image within the grid cell 
-  max-width: 100%; /* Ensure image doesn't exceed container width 
-  max-height: 100%; /* Ensure image doesn't exceed container height 
-} */
-
-#img-change- {
+#img-change {
   max-width: 100%; /* Ensure image doesn't exceed container width */
   max-height: 100%; /* Ensure image doesn't exceed container height */
 }
@@ -453,10 +447,19 @@ footer {
   /*height: 500px; /* Fixed height for the grid container */
   margin: 0 auto; /* Center the grid horizontally */
   justify-content: center; /* Center the grid items horizontally */
+  margin-bottom: 50px;
 }
 
 .grid-container-img img {
   max-width: 100%; /* Ensure image doesn't exceed container width */
   height: 500px; /* Set a fixed height for the images */
   object-fit: cover; /* Ensure images fill the fixed height without distortion */
+}
+
+.sub-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: var(--bg-color);
 }
