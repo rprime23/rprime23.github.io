@@ -280,12 +280,12 @@ footer {
   padding: 0.4rem;
 }
 
-.row {
+.fAFRow {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap */
 }
 
-.column {
+.fAFColumn {
   flex: 1 0 50%; /* Each column takes up one-half of the row's width */
   padding: 5px; /* Adjust padding as needed */
 }
@@ -296,40 +296,41 @@ footer {
   margin-right: auto;
 }
 
-/* Target the second row's second column specifically
-.second-row .column img {
-  width: 50%; /* On larger screens, the second image in the second row takes up 50% width 
-} */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 1 0 33.33%;
+  padding: 5px;
+}
 
 /* Media query for mobilSe-sized screens */
 @media only screen and (max-width: 780px) {
+  .fAFColumn {
+    flex: 1 0 100%; /* Each column takes up the full width of the row */
+  }
+
   .column {
     flex: 1 0 100%; /* Each column takes up the full width of the row */
   }
-  /* .second-row .column {
-    width: 100%; /* On mobile screens, the second image in the second row takes up 100% width 
-  } */
+
   #rowTwo {
     width: 100%;
   }
 }
 
 @media only screen and (min-width: 780px) {
-  .column {
+  .fAFColumn {
     flex: 1 0 50%; /* Each column takes up the full width of the row */
   }
-  /* .second-row .column {
-    width: 100%; /* On mobile screens, the second image in the second row takes up 100% width 
-  } */
+
   #rowTwo {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
-
-
 
 /* RESUME AND SOCIALS */
 
