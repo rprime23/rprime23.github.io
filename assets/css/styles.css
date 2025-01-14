@@ -6,7 +6,7 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #060b4b;
+  --bg-color: #3D79F2;
   --primary-color: #ffffff;
   --secondary-color: #a30000;
   --primary-shadow: #000000;
@@ -142,7 +142,7 @@ nav ul li {
 }
 
 .more-about p {
-  color: #ffffff;
+  color: var(--primary-color);
   line-height: var(--line-height);
   padding: 0.4rem;
 }
@@ -318,6 +318,10 @@ footer {
   #rowTwo {
     width: 100%;
   }
+
+  .workSingle {
+    width: 100%; 
+  }
 }
 
 @media only screen and (min-width: 780px) {
@@ -326,6 +330,12 @@ footer {
   }
 
   #rowTwo {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .workSingle {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -369,7 +379,7 @@ footer {
 }
 
 .social-button:hover {
-  background-color: #253159; /* Set background color on hover (adjust as needed) */
+  background-color: #bababa; /* Set background color on hover (adjust as needed) */
 }
 
 /* Center the resume button */
@@ -384,7 +394,7 @@ footer {
 
 .resume-button .social-button-container.resume .social-button {
   padding: 10px 20px; /* Adjust padding for the resume button size */
-  background-color: #060b4b;
+  background-color: var(--bg-color);
 }
 
 /* Courses */
@@ -410,7 +420,7 @@ footer {
 .courses-title {
   text-align: center;
   margin-bottom: 1rem;
-  background-color: #060b4b;
+  background-color: var(--bg-color);
   color: var(--primary-color);
 }
 
@@ -446,6 +456,121 @@ footer {
 
 .see-more-text {
   color: #0099ff;
+}
+
+/* WORK */
+
+.work-details {
+  margin-bottom: var(--bottom-margin);
+}
+
+.work-type-title {
+  margin-bottom: var(--bottom-margin);
+}
+
+.work-card {
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--primary-shadow);
+  padding: 20px;
+  margin: 10px;
+  align-items:center;
+}
+
+.work-card ul {
+  list-style-type: disc !important; /* Ensure bullet points show */
+  padding-left: 1.5rem; /* Indent the bullets */
+}
+
+.work-card ul li {
+  display: list-item !important; /* Ensure it's treated as a list item */
+  margin-bottom: 0.5rem; /* Optional spacing */
+}
+
+.work-container {
+  text-align: left;
+  /*width: calc(100% / 3 - 20px); /* Divide by the number of items per row and subtract the total margin */
+  width: 80%;
+  padding: 1rem;
+  margin: 10px; /* Add some margin to each item */
+  /* text-align: center;
+  width: 21.875rem;
+  padding: 1rem; */
+  align-items: center;
+}
+
+.all-work-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow the items to wrap as needed */
+}
+
+.work-container p {
+  padding: 0.4rem;
+}
+
+.all-work-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 32px 0;
+  margin-top: 2rem;
+}
+
+/* Work Ex */
+
+.work-ex h2 {
+  font-size: 30px;
+  background-color: #ffffff;
+  color: var(--bg-color);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+.job-title h1 {
+  font-size: 48px;
+  background-color: #ffffff;
+  color: var(--bg-color);
+  text-align: center;
+  /* margin-top: 60px;
+  margin-bottom: 40px;  */
+}
+
+.job-title h4 {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.work-ex p {
+  text-align:center; 
+  width: 60%;
+  transform: translate(+30%, 0%);
+  margin-bottom: 20px;
+}
+
+.work-ex img {
+  box-shadow: 0 3px 5px var(--primary-shadow);
+}
+
+.column-4 {
+  flex: 1 0 25%;
+  padding: 5px;
+}
+
+.work-ex img:hover {
+  box-shadow: 0 10px 20px var(--bg-color);
 }
 
 /* 3D Models Page */
@@ -503,4 +628,27 @@ footer {
   font-size: 20px;
   background-color: #ffffff;
   color: var(--bg-color);
+}
+
+/* Header Image */
+
+.header-image {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.centered h1 {
+  font-size: 100px;
+}
+
+.centered h3 {
+  font-size: 40px;
 }
