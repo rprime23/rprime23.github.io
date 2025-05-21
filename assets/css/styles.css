@@ -466,6 +466,11 @@ footer {
   color: #0099ff;
 }
 
+.see-more-text:hover {
+  color:var(--secondary-color);
+  text-decoration: underline;
+}
+
 /* WORK */
 
 .work-details {
@@ -493,6 +498,18 @@ footer {
 .work-card ul li {
   display: list-item !important; /* Ensure it's treated as a list item */
   margin-bottom: 0.5rem; /* Optional spacing */
+}
+
+.fun-facts-list ul {
+  list-style-type: disc !important; /* Ensure bullet points show */
+  padding-left: 1.5rem; /* Indent the bullets */
+  color: white;
+}
+
+.fun-facts-list ul li {
+  display: list-item !important; /* Ensure it's treated as a list item */
+  margin-bottom: 0.5rem; /* Optional spacing */
+  color: white;
 }
 
 .work-container {
@@ -659,4 +676,17 @@ footer {
 
 .centered h3 {
   font-size: 40px;
+}
+
+.cb-link {
+  text-align:center;
+}
+
+.cb-link a {
+  color: #0099ff;
+}
+
+.cb-link a:hover {
+  color:var(--secondary-color);
+  text-decoration: underline;
 }
