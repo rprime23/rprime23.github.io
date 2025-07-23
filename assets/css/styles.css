@@ -11,6 +11,7 @@
   --secondary-color: #a30000;
   --primary-shadow: #000000;
   --secondary-shadow: #ffffff;
+  --txt-color: #1E3A8A;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
@@ -149,54 +150,91 @@ nav ul li {
   padding-bottom: 0;
 }
 
-/* MORE ABOUT */
+/* MORE ABOUT - Fixed centering */
 
 .more-about {
-  margin-top: 5px;
-  background-color: var(--bg-color);
-  padding: 1rem 6rem;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the container */
+}
+
+.more-about-container {
+  width: 90%;
+  /* max-width: 1200px; Add max-width for better control */
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr; /* Use fr units instead of percentages */
+  gap: 20px; /* Increase gap for better spacing */
+  align-items: center; /* Vertically center grid items */
+}
+
+.more-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .more-about h2 {
-  color: var(--primary-color);
+  color: var(--bg-color);
   margin-bottom: var(--bottom-margin);
   text-align: center;
+  font-size: 30px;
+  margin-top: 2rem;
 }
 
 .more-about p {
-  color: var(--primary-color);
+  color: var(--primary-shadow);
   line-height: var(--line-height);
   padding: 0.4rem;
 }
 
-/* SKILLS */
-
-.skills {
-  max-width: 68.75rem;
-  margin: auto;
-  text-align: center;
-  margin-top: 2.5rem;
+.more-about ul {
+  list-style-position: inside;
 }
 
-.skill-header {
-  margin-bottom: 1rem;
+.fun-facts-list ul {
+  list-style-type: disc !important;
+  color: var(--primary-shadow);
 }
 
-.skills-wrapper img {
-  padding: 1.25rem;
+.fun-facts-list ul li {
+  display: list-item !important;
+  margin-bottom: 0.5rem;
+  color: var(--primary-shadow);
 }
 
-.icon {
-  width: 11.875rem;
-  height: 11.25rem;
+.circular-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
-.icon-card {
-  background-color: #ffffff;
-  border-radius: 11px;
-  box-shadow: 0 3px 10px var(--secondary-shadow);
-  padding: 20px;
-  margin: 10px;
+/* Media queries for responsive design */
+@media only screen and (max-width: 780px) {
+  .more-about-container {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: 30px;
+    width: 95%;
+  }
+  
+  .circular-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .more-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .more-container {
+    width: 100%;
+  }
 }
 
 /* PROJECTS */
@@ -209,27 +247,33 @@ nav ul li {
 
 .project-pic {
   width: 65%;
-  height: 60%;
+  height: auto; /* Use native height */
+  object-fit: contain; /* Maintains aspect ratio without cropping */
 }
 
 .projects-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 21.875rem));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-content: center; /* Centers the grid when there are fewer than 3 items */
+  
+  /* Define grid template areas to align content across cards */
+  grid-auto-rows: minmax(auto, max-content); /* Prevent excessive expansion */
 }
 
 .projects-title {
   text-align: center;
   margin-bottom: 1rem;
-  font-size: 36px;
+  font-size: 30px;
   background-color: #ffffff;
   color: var(--bg-color);
 }
 
 .project-container {
   text-align: center;
-  width: 21.875rem;
   padding: 1rem;
 }
 
@@ -250,7 +294,66 @@ nav ul li {
   border-radius: 11px;
   box-shadow: 0 3px 10px var(--primary-shadow);
   padding: 20px;
-  margin: 10px;
+  
+  /* Use flexbox for consistent card heights */
+  display: flex;
+  flex-direction: column;
+  /* min-height: 300px; Set reasonable minimum height */
+  /* max-height: 500px; Prevent excessive expansion */
+  min-height:auto;
+  
+  /* Ensure consistent internal spacing */
+  align-items: center;
+}
+
+.project-pic-container {
+  /* Set height based on the tallest image in each section */
+  /* min-height: 120px; Adjust this value based on your largest images */
+  display: flex;
+  align-items: center; /* Center images vertically in the container */
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.project-content-bottom {
+  /* Content container grows to fill remaining space */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.project-title {
+  /* Title area with consistent spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: var(--bottom-margin);
+  min-height: 2em; /* Ensure consistent title height */
+}
+
+.project-details {
+  /* Description takes available space */
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  margin-bottom: var(--bottom-margin);
+}
+
+.project-details {
+  margin-bottom: var(--bottom-margin);
+  /* Remove flex properties from previous version */
+}
+
+.project-container a {
+  /* Link stays at the very bottom */
+  margin-top: auto;
 }
 
 /* SOCIALS */
@@ -481,18 +584,6 @@ footer {
   margin-bottom: 0.5rem; /* Optional spacing */
 }
 
-.fun-facts-list ul {
-  list-style-type: disc !important; /* Ensure bullet points show */
-  padding-left: 1.5rem; /* Indent the bullets */
-  color: white;
-}
-
-.fun-facts-list ul li {
-  display: list-item !important; /* Ensure it's treated as a list item */
-  margin-bottom: 0.5rem; /* Optional spacing */
-  color: white;
-}
-
 .work-container {
   text-align: left;
   /*width: calc(100% / 3 - 20px); /* Divide by the number of items per row and subtract the total margin */
@@ -692,10 +783,9 @@ footer {
 }
 
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
 }
 
 .skills-list {
@@ -704,18 +794,55 @@ footer {
   padding: 10px;
 }
 
-.skills-list ul {
-  list-style-type: disc !important; /* Ensure bullet points show */
+/* Remove the old ul styling and replace with pill container */
+.skills-list .pill-container {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(5, auto); /* Max 5 rows per column */
-  gap: 0.5rem 10px;
-  list-style: disc inside;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  align-items: start;
 }
 
-.skills-list ul li {
-  display: list-item !important; /* Ensure it's treated as a list item */
-  text-align: left;
+/* Pill styling */
+.pill {
+  background: #e0f2fe;
+  color: #0277bd;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Remove all ul/li styling since we're using pills now */
+.skills-list ul {
+  display: none;
+}
+
+.skills {
+  width:80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.skill-header {
+  margin-bottom: 1rem;
+}
+
+.skills-wrapper img {
+  padding: 1.25rem;
+}
+
+.icon {
+  width: 11.875rem;
+  height: 11.25rem;
+}
+
+.icon-card {
+  background-color: #ffffff;
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--secondary-shadow);
+  padding: 20px;
+  margin: 10px;
 }
 
 
@@ -815,6 +942,26 @@ footer {
   .centered h3 {
     font-size: 1.25rem;
   }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skills-list {
+    padding: 15px;
+  }
+  
+  .pill {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .more-container {
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (min-width: 780px) {
@@ -841,4 +988,16 @@ footer {
   .projects-container {
     flex-direction: row;
   }
+
+  .skills-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .more-container {
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
 }

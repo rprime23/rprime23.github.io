@@ -108,3 +108,133 @@ function setupHumanImageSlider()
 
   setInterval(changeImageSrc, 3000);
 }
+
+/* Projects cards */
+// Function to equalize image container heights within each project section
+function equalizeImageHeights() {
+  // Get all project sections
+  const projectSections = document.querySelectorAll('.projects');
+  
+  projectSections.forEach(section => {
+    const imageContainers = section.querySelectorAll('.project-pic-container');
+    const images = section.querySelectorAll('.project-pic');
+    
+    // Reset any previously set min-heights
+    imageContainers.forEach(container => {
+      container.style.minHeight = 'auto';
+    });
+    
+    // Wait for images to load, then calculate max height
+    Promise.all(
+      Array.from(images).map(img => {
+        return new Promise(resolve => {
+          if (img.complete) {
+            resolve();
+          } else {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve); // Handle broken images
+          }
+        });
+      })
+    ).then(() => {
+      // Find the tallest image container in this section
+      let maxHeight = 0;
+      
+      imageContainers.forEach(container => {
+        // Temporarily remove min-height to get natural height
+        container.style.minHeight = 'auto';
+        const height = container.offsetHeight;
+        maxHeight = Math.max(maxHeight, height);
+      });
+      
+      // Set all containers in this section to the max height
+      imageContainers.forEach(container => {
+        container.style.minHeight = `${maxHeight}px`;
+      });
+    });
+  });
+}
+
+// Alternative approach: Set min-height based on actual image dimensions
+function equalizeByImageDimensions() {
+  const projectSections = document.querySelectorAll('.projects');
+  
+  projectSections.forEach(section => {
+    const images = section.querySelectorAll('.project-pic');
+    const containers = section.querySelectorAll('.project-pic-container');
+    
+    // Reset min-heights
+    containers.forEach(container => {
+      container.style.minHeight = 'auto';
+    });
+    
+    // Wait for all images to load
+    Promise.all(
+      Array.from(images).map(img => {
+        return new Promise(resolve => {
+          if (img.complete) {
+            resolve();
+          } else {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve);
+          }
+        });
+      })
+    ).then(() => {
+      let maxImageHeight = 0;
+      
+      // Find the tallest image (accounting for the 65% width scaling)
+      images.forEach(img => {
+        const containerWidth = img.parentElement.offsetWidth;
+        const scaledWidth = containerWidth * 0.65; // 65% as per CSS
+        const aspectRatio = img.naturalHeight / img.naturalWidth;
+        const scaledHeight = scaledWidth * aspectRatio;
+        
+        maxImageHeight = Math.max(maxImageHeight, scaledHeight);
+      });
+      
+      // Set all containers to accommodate the tallest scaled image
+      containers.forEach(container => {
+        container.style.minHeight = `${maxImageHeight + 20}px`; // +20px for some padding
+      });
+    });
+  });
+}
+
+// Function to handle window resize
+function handleResize() {
+  // Debounce resize events
+  clearTimeout(window.resizeTimeout);
+  window.resizeTimeout = setTimeout(() => {
+    equalizeImageHeights();
+  }, 250);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  equalizeImageHeights();
+});
+
+// Re-equalize on window resize
+window.addEventListener('resize', handleResize);
+
+// Optional: Re-equalize when images are lazy-loaded
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.addEventListener('load', () => {
+        setTimeout(equalizeImageHeights, 100);
+      });
+    }
+  });
+});
+
+// Observe all project images for lazy loading
+document.querySelectorAll('.project-pic').forEach(img => {
+  observer.observe(img);
+});
+
+// Export functions for manual triggering if needed
+window.equalizeImageHeights = equalizeImageHeights;
+window.equalizeByImageDimensions = equalizeByImageDimensions;
