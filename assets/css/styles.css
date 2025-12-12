@@ -77,10 +77,12 @@ nav a {
   color: var(--primary-color);
   transition: var(--transition);
 }
-nav a:hover {
-  color: var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
+nav a:hover,
+nav a:focus-visible {
+  color: #ffffff; /* keep white for contrast */
+  border-bottom: 2px solid #ffffff;
 }
+
 
 /* Default desktop nav: show nav links horizontally */
 nav ul {
@@ -480,6 +482,10 @@ footer {
   margin-top: 20px; /* Adjust the margin as needed */
 }
 
+.resume-button .social-button {
+  color: #ffffff;
+}
+
 .resume-button .social-button-container.resume {
   display: block;
   margin: 20px auto; /* Adjust the margin for spacing and centering */
@@ -489,6 +495,12 @@ footer {
   padding: 10px 20px; /* Adjust padding for the resume button size */
   background-color: var(--bg-color);
   color: #ffffff;
+}
+
+.resume-button .social-button:hover,
+.resume-button .social-button:focus-visible {
+  color: #ffffff;
+  background-color: var(--bg-color);
 }
 
 /* Courses */
