@@ -69,17 +69,17 @@ function setupAlienImageSlider() {
 
   let currentPos = 0;
   const imagesAlien = [
-    "../images/3D_Art/Alien_Model/conceptFront.png",
-    "../images/3D_Art/Alien_Model/conceptBack.png",
-    "../images/3D_Art/Alien_Model/conceptSide.png",
-    "../images/3D_Art/Alien_Model/frontLines.png",
-    "../images/3D_Art/Alien_Model/backLines.png",
-    "../images/3D_Art/Alien_Model/sideLines.png",
-    "../images/3D_Art/Alien_Model/side2Lines.png",
-    "../images/3D_Art/Alien_Model/threeFourthsFlat.png",
-    "../images/3D_Art/Alien_Model/frontSmooth.png",
-    "../images/3D_Art/Alien_Model/backSmooth.png",
-    "../images/3D_Art/Alien_Model/sideSmooth.png"
+    "../images/3D_Art/Alien_Model/conceptFront.webp",
+    "../images/3D_Art/Alien_Model/conceptBack.webp",
+    "../images/3D_Art/Alien_Model/conceptSide.webp",
+    "../images/3D_Art/Alien_Model/frontLines.webp",
+    "../images/3D_Art/Alien_Model/backLines.webp",
+    "../images/3D_Art/Alien_Model/sideLines.webp",
+    "../images/3D_Art/Alien_Model/side2Lines.webp",
+    "../images/3D_Art/Alien_Model/threeFourthsFlat.webp",
+    "../images/3D_Art/Alien_Model/frontSmooth.webp",
+    "../images/3D_Art/Alien_Model/backSmooth.webp",
+    "../images/3D_Art/Alien_Model/sideSmooth.webp"
   ];
 
   function changeImageSrc() {
@@ -95,9 +95,9 @@ function setupHumanImageSlider()
   
   var image = document.getElementById("img-change");
   var currentPos = 0;
-  var images = ["..\\images\\3D_Art\\Human_Male\\fingerSmooth.jpg", "..\\images\\3D_Art\\Human_Male\\handSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoSmooth.png",
-                  "..\\images\\3D_Art\\Human_Male\\frontTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\backTorsoArmSmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoLegSmooth.png",
-                  "..\\images\\3D_Art\\Human_Male\\noDetailBodySmooth.png", "..\\images\\3D_Art\\Human_Male\\torsoDetailSmooth.png", "..\\images\\3D_Art\\Human_Male\\headSmooth.png"];
+  var images = ["..\\images\\3D_Art\\Human_Male\\fingerSmooth.webp", "..\\images\\3D_Art\\Human_Male\\handSmooth.webp", "..\\images\\3D_Art\\Human_Male\\torsoSmooth.webp",
+                  "..\\images\\3D_Art\\Human_Male\\frontTorsoArmSmooth.webp", "..\\images\\3D_Art\\Human_Male\\backTorsoArmSmooth.webp", "..\\images\\3D_Art\\Human_Male\\torsoLegSmooth.webp",
+                  "..\\images\\3D_Art\\Human_Male\\noDetailBodySmooth.webp", "..\\images\\3D_Art\\Human_Male\\torsoDetailSmooth.webp", "..\\images\\3D_Art\\Human_Male\\headSmooth.webp"];
 
   function changeImageSrc() {
       if (++currentPos >= images.length)

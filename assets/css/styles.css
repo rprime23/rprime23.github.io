@@ -36,7 +36,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--txt-color);
 }
 
 a:hover {
@@ -125,6 +125,10 @@ nav ul li {
   object-fit: cover;
   margin-top: 5px;
   display: block;
+}
+
+.header-h2 {
+  font-size:3rem;
 }
 
 .bio {
@@ -484,6 +488,7 @@ footer {
 .resume-button .social-button-container.resume .social-button {
   padding: 10px 20px; /* Adjust padding for the resume button size */
   background-color: var(--bg-color);
+  color: #ffffff;
 }
 
 /* Courses */
@@ -542,7 +547,7 @@ footer {
 }
 
 .see-more-text {
-  color: #0099ff;
+  color: #005fcc;
 }
 
 .see-more-text:hover {
@@ -806,7 +811,7 @@ footer {
 /* Pill styling */
 .pill {
   background: #e0f2fe;
-  color: #0277bd;
+  color: #045d9f;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
@@ -877,6 +882,10 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
+  }
+
+  .header-h2 {
+    font-size:1.25rem;
   }
 
   .bio {
