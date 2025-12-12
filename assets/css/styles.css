@@ -54,6 +54,23 @@ body {
   box-sizing: border-box;
 }
 
+/* Explicit heading sizes to avoid deprecated UA behavior */
+h1 {
+  font-size: 2.5rem;
+  font-weight: var(--bolder-font);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: var(--bold-font);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: var(--bold-font);
+}
+
+
 /* NAV BAR */
 
 nav {
