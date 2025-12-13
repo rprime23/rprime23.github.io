@@ -138,13 +138,23 @@ nav ul li {
   padding: 1rem; /* Prevents edge overflow on mobile */
 }
 
-.hero img {
+/* .hero img {
   width: 100%;
   max-width: 600px;
   height: auto;
   object-fit: cover;
   margin-top: 5px;
   display: block;
+} */
+
+.hero-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin-top: 5px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1; 
 }
 
 .header-h2 {
