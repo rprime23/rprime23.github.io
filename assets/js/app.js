@@ -239,9 +239,9 @@ document.querySelectorAll('.project-pic').forEach(img => {
 window.equalizeImageHeights = equalizeImageHeights;
 window.equalizeByImageDimensions = equalizeByImageDimensions;
 
-window.addEventListener("load", () => {
-  const bio = document.getElementById("bio");
-  if (!bio) return;
-  bio.classList.add("animate__animated", "animate__shakeX");
-});
+// window.addEventListener("load", () => {
+//   const bio = document.getElementById("bio");
+//   if (!bio) return;
+//   bio.classList.add("animate__animated", "animate__shakeX");
+// });
 
