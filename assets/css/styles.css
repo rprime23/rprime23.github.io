@@ -284,6 +284,10 @@ nav ul li {
   .more-container {
     width: 100%;
   }
+
+  .project-pic {
+    width: 80%;
+  }
 }
 
 @media only screen and (min-width: 780px) {
@@ -301,7 +305,7 @@ nav ul li {
 }
 
 .project-pic {
-  width: 65%;
+  width: 100%;
   height: auto; /* Use native height */
   object-fit: contain; /* Maintains aspect ratio without cropping */
 }
