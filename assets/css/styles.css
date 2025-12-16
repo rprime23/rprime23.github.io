@@ -959,6 +959,7 @@ footer {
     width: 90%;
     align-items: center;
     padding-bottom: 0;
+    min-height: 220px;
   }
 
   .bio p {
