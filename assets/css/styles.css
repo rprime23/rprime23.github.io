@@ -314,14 +314,15 @@ nav ul li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(21.875rem, 21.875rem));
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
-  justify-content: center; /* Centers the grid when there are fewer than 3 items */
+  justify-content: center; 
   
-  /* Define grid template areas to align content across cards */
-  grid-auto-rows: minmax(auto, max-content); /* Prevent excessive expansion */
+  grid-auto-rows: minmax(auto, max-content); 
 }
+
+
 
 .projects-title {
   text-align: center;
