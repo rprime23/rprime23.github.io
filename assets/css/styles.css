@@ -48,7 +48,7 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 :root {
-  --font-family: "Verdana", sans-serif;
+  --font-family: "Roboto", sans-serif;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
