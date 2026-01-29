@@ -5,19 +5,29 @@
 
   <!-- Google tag (gtag.js) -->
   <script>
-    window.addEventListener('load', function () {
-      var s = document.createElement('script');
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC";
-      s.async = true;
-      document.head.appendChild(s);
-  
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SG6WP4DXBC');
-    });
-  </script>
+  // Delay GA load until browser is idle (or after a short fallback delay)
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
+  function loadGA(){
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGA, { timeout: 2000 });
+  } else {
+    setTimeout(loadGA, 1500);
+  }
+</script>
 
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
