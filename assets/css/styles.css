@@ -1,9 +1,3 @@
-body {
-  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Arial, sans-serif;
-}
-html { font-size-adjust: 0.52; } /* helps reduce metric mismatch for fallback vs Roboto */
-
 *,
 ::after,
 ::before {
@@ -54,7 +48,7 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 :root {
-  --font-family: "Roboto", sans-serif;
+  --font-family: "Ariel", sans-serif;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
