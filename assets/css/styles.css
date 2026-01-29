@@ -49,7 +49,7 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 :root {
-  --font-family: "Roboto", sans-serf;
+  --font-family: "Roboto", sans-serif;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
