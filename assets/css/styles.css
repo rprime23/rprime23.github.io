@@ -2,6 +2,7 @@ body {
   font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Arial, sans-serif;
 }
+html { font-size-adjust: 0.52; } /* helps reduce metric mismatch for fallback vs Roboto */
 
 *,
 ::after,
