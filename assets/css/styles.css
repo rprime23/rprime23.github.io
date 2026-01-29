@@ -27,6 +27,13 @@ nav h1 {
 .hero {
   padding: 1rem;
 }
+
+.hero { align-items: stretch; } /* you already do */
+.bio { min-height: 240px; }     /* adjust until CLS disappears */
+@media (max-width: 780px) {
+  .bio { min-height: 200px; }
+}
+
 .bio p,
 .more-about p,
 .project-desc p {
