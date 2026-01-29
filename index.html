@@ -42,6 +42,19 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap"></noscript>
 
+  <!-- Preload hero images -->
+  <link rel="preload"
+        as="image"
+        href="assets/images/Backgrounds/bryce_background.webp"
+        imagesrcset="assets/images/Backgrounds/bryce_background.webp"
+        imagesizes="100vw"
+        fetchpriority="high">
+  
+  <link rel="preload"
+        as="image"
+        href="assets/images/Backgrounds/bryce_background_mobile.webp"
+        media="(max-width: 768px)">
+
   <title>Reyna Murphy</title>
 </head>
 
@@ -72,14 +85,21 @@
     <section class="header">
       <div class="header-image">
         <picture>
-          <!-- Mobile: 3x2 vertical image -->
-          <source srcset="assets/images/Backgrounds/bryce_background_mobile.webp" media="(max-width: 768px)">
-
-          <!-- Desktop: 16x9 image -->
-          <img src="assets/images/Backgrounds/bryce_background.webp" width="1920" height="1080"
-            alt="Bryce National Park" fetchpriority="high">
+          <!-- Mobile -->
+          <source
+            srcset="assets/images/Backgrounds/bryce_background_mobile.webp"
+            media="(max-width: 768px)">
+    
+          <!-- Desktop -->
+          <img
+            src="assets/images/Backgrounds/bryce_background.webp"
+            width="1920"
+            height="1080"
+            alt="Bryce National Park"
+            fetchpriority="high"
+            decoding="async">
         </picture>
-
+    
         <div class="centered">
           <h1>Reyna Murphy</h1>
           <h2 class="header-h2">Developer</h2>
