@@ -4,6 +4,8 @@ body {
 }
 html { font-size-adjust: 0.52; } /* helps reduce metric mismatch for fallback vs Roboto */
 
+:root { font-family: sans-serif; }
+
 *,
 ::after,
 ::before {
