@@ -7,7 +7,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-SG6WP4DXBC');
@@ -16,11 +16,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development." />
+  <meta name="description"
+    content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap">
 
 
   <!--CSS Styles -->
@@ -61,7 +63,15 @@
   <main>
     <section class="header">
       <div class="header-image">
-        <img src="assets/images/Backgrounds/bryce_background.webp" width="1920" height="1080" alt="Bryce National Park" fetchpriority="high">
+        <picture>
+          <!-- Mobile: 3x2 vertical image -->
+          <source srcset="assets/images/Backgrounds/bryce_background_mobile.webp" media="(max-width: 768px)">
+
+          <!-- Desktop: 16x9 image -->
+          <img src="assets/images/Backgrounds/bryce_background.webp" width="1920" height="1080"
+            alt="Bryce National Park" fetchpriority="high">
+        </picture>
+
         <div class="centered">
           <h1>Reyna Murphy</h1>
           <h2 class="header-h2">Developer</h2>
@@ -69,10 +79,12 @@
       </div>
     </section>
 
+
     <!-- Bio Section -->
 
     <section class="hero" id="about">
-      <img src="assets/images/portraits/overlapped.webp" alt="reyna-murphy" class="hero-img" width="600" height="600" decoding="async" fetchpriority="high" />
+      <img src="assets/images/portraits/overlapped.webp" alt="reyna-murphy" class="hero-img" width="600" height="600"
+        decoding="async" fetchpriority="high" />
       <div class="bio" id="bio">
         <h2 class="bio-title">About Me</h2>
         <p class="bio-text">
@@ -203,25 +215,28 @@
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp" alt="Reyna Murphy Adventures Photography Site" loading="lazy"
-              class="project-pic" />
+            <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp"
+              alt="Reyna Murphy Adventures Photography Site" loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Reyna Murphy Adventures Photography Site</h3>
             <p class="project-details">
-              A simple photography portfolio site showing different landscapes and nature pictures. 
+              A simple photography portfolio site showing different landscapes and nature pictures.
             </p>
-            <a href="assets/pages/reynaMurphyAdventures.html"><span class="see-more-text">View Photography Website</span></a>
+            <a href="assets/pages/reynaMurphyAdventures.html"><span class="see-more-text">View Photography
+                Website</span></a>
           </div>
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/work/Active_Deal_Image_small.webp" alt="E-commerce UI Features and Interactive Modules" loading="lazy" class="project-pic" />
+            <img src="assets/images/work/Active_Deal_Image_small.webp"
+              alt="E-commerce UI Features and Interactive Modules" loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">E-commerce UI Features & Interactive Modules</h3>
             <p class="project-details">
-              A collection of production-ready UI features built for live e-commerce pages, including promotional calendars,
+              A collection of production-ready UI features built for live e-commerce pages, including promotional
+              calendars,
               add-to-cart pricing modules, and sales-driven page enhancements developed under real CMS constraints.
             </p>
             <a href="assets/pages/ecomUIElements.html">
@@ -232,7 +247,8 @@
 
         <div class="project-container project-card featured">
           <div class="project-pic-container">
-            <img src="assets/images/portfolio.webp" alt="Reyna Murphy Portfolio Website" loading="lazy" class="project-pic" />
+            <img src="assets/images/portfolio.webp" alt="Reyna Murphy Portfolio Website" loading="lazy"
+              class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <!-- <div class="project-tags">
@@ -240,7 +256,8 @@
             </div> -->
             <h3 class="project-title">Portfolio Website</h3>
             <p class="project-details">
-              A responsive portfolio showcasing web design and front-end development work, built with a focus on accessibility, performance, and modern UI/UX best practices.
+              A responsive portfolio showcasing web design and front-end development work, built with a focus on
+              accessibility, performance, and modern UI/UX best practices.
             </p>
           </div>
         </div>
@@ -254,13 +271,14 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Murphys_Game_Room/Game_Room_Small.webp" alt="Murphy's Game Room Graphic" loading="lazy"
-              class="project-pic" />
+            <img src="assets/images/Murphys_Game_Room/Game_Room_Small.webp" alt="Murphy's Game Room Graphic"
+              loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Murphy's Game Room</h3>
             <p class="project-details">
-              An overview of the design and creative process for a gaming website that highlights the games I play and enjoy.
+              An overview of the design and creative process for a gaming website that highlights the games I play and
+              enjoy.
             </p>
             <a href="assets/pages/murphysGameRoom.html"><span class="see-more-text">View Gaming Site Design</span></a>
           </div>
@@ -268,15 +286,17 @@
 
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp" alt="Reyna Murphy Adventures Photography Site Redesign" loading="lazy"
-              class="project-pic" />
+            <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp"
+              alt="Reyna Murphy Adventures Photography Site Redesign" loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Reyna Murphy Adventures Photography Site Redesign</h3>
             <p class="project-details">
-              A redesign of my photography portfolio site focusing on better user experience and modern design principles. 
+              A redesign of my photography portfolio site focusing on better user experience and modern design
+              principles.
             </p>
-            <a href="assets/pages/reynaMurphyAdventures.html"><span class="see-more-text">View Photography Website Redesign</span></a>
+            <a href="assets/pages/reynaMurphyAdventures.html"><span class="see-more-text">View Photography Website
+                Redesign</span></a>
           </div>
         </div>
       </div>
@@ -370,7 +390,8 @@
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Clay_Beats/cb_title_small.webp" alt="zeus' wrath" loading="lazy" class="project-pic" />
+            <img src="assets/images/Clay_Beats/cb_title_small.webp" alt="zeus' wrath" loading="lazy"
+              class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Clay Beats</h3>
@@ -412,14 +433,17 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/youtube/youtubeGamingSmall.webp" alt="Gaming Content Production & Analytics" loading="lazy" class="project-pic" />
+            <img src="assets/images/youtube/youtubeGamingSmall.webp" alt="Gaming Content Production & Analytics"
+              loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Gaming, Gaming & More Gaming</h3>
             <p class="project-details">
-              A personal YouTube project focused on planning, recording, editing, and publishing gameplay videos. Emphasizes consistency, audience engagement, and iterative improvement through performance analysis.
+              A personal YouTube project focused on planning, recording, editing, and publishing gameplay videos.
+              Emphasizes consistency, audience engagement, and iterative improvement through performance analysis.
             </p>
-            <a href="assets/pages/returnHome.html"><span class="see-more-text">Learn More About Gaming Channel</span></a>
+            <a href="assets/pages/returnHome.html"><span class="see-more-text">Learn More About Gaming
+                Channel</span></a>
           </div>
         </div>
       </div>
@@ -453,7 +477,8 @@
 
       <div class="resume-button">
         <div class="social-button-container resume">
-          <a href="assets/resumes/Reyna_Murphy_Resume_December_2025.pdf" target="_blank" class="social-button">RESUME</a>
+          <a href="assets/resumes/Reyna_Murphy_Resume_December_2025.pdf" target="_blank"
+            class="social-button">RESUME</a>
         </div>
       </div>
 
