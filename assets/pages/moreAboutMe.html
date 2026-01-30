@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // Delay GA load until browser is idle (or after a short fallback delay)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        function loadGA() {
+            if (window.__gaLoaded) return;
+            window.__gaLoaded = true;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+            s.onload = function () {
+                gtag('js', new Date());
+                gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+            };
+            document.head.appendChild(s);
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA, { timeout: 2000 });
+        } else {
+            setTimeout(loadGA, 1500);
+        }
+    </script>
+
+    <script defer src="../js/navbar.js"></script>
+
+    <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development. See some of my animation work." />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    </noscript>
+
+    <!--CSS Styles -->
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
+
+    <!-- Preload hero images -->
+    <link rel="preload" as="image" href="../images/3D_Art/weebly background.webp"
+        imagesrcset="../images/3D_Art/weebly background.webp" imagesizes="100vw" fetchpriority="high">
+
+    <title>Reyna Murphy - More About Me</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <header>
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <!-- Bio Section -->
+
+    <section class="hero" id="about">
+      <img src="../images/portraits/overlapped.webp" alt="reyna-murphy" class="hero-img" width="600" height="600"
+        decoding="async" fetchpriority="high" />
+      <div class="bio" id="bio">
+        <h2 class="bio-title">About Me</h2>
+        <p class="bio-text">
+          My name is Reyna Murphy, and I am a recent graduate of the University of Utah. I majored in Computer Science
+          with an Emphasis in Games. I'm a website designer and developer who loves bringing creative ideas to life through clean, engaging, 
+          and high-performing web experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- More about -->
+
+    <section class="more-about">
+
+      <div class="more-about-container">
+        <img src="../images/more_about/Yosemite_Square.webp" alt="Yosemite Falls" class="circular-image">
+
+        <div class="more-container">
+          <h2>More About Me</h2>
+          <p>
+            I became interested in computers after my brother built his own PC. Since then, I have discovered an
+            interest
+            in 3D modeling, programming, software development, web development, and game development.
+          </p>
+          <p>
+            My hobbies include gaming, martial arts, soccer, hiking, and LEGOs.
+          </p>
+          <p>
+            <strong>Fun Facts:</strong>
+          </p>
+          <div class="fun-facts-list">
+            <ul>
+              <li>I have a first degree black belt in taekwondo and a second degree black belt in karate.</li>
+              <li>I have season tickets to the Utah Royals FC women's soccer team. </li>
+              <li>My favorite video game is Mass Effect Legendary Edition.</li>
+              <li>My favorite type of LEGOs are the Speed Champion sets.</li>
+              <li>My favorite National Park is Glacier National Park.</li>
+            </ul>
+          </div>
+        </div>
+
+        <img src="../images/more_about/black_belt.webp" alt="Martial Arts Black Belt" class="circular-image">
+      </div>
+
+    </section>
+
+        <!-- Contact section -->
+
+    <section id="contact" name="contact" style="margin-top: 2rem;">
+      <h1>Contact and Links</h1>
+
+      <div class="social-buttons">
+        <div class="social-button-container">
+          <a href="https://github.com/rprime23" target="_blank" class="social-button">
+            <img src="../icons/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="192" height="192" loading="lazy" >
+          </a>
+        </div>
+
+        <div class="social-button-container">
+          <a href="mailto:reynamurphy23@gmail.com" target="_blank" class="social-button">
+            <img src="../icons/email.png" alt="Email" width="192" height="192" loading="lazy" >
+          </a>
+        </div>
+
+        <div class="social-button-container">
+          <a href="https://www.linkedin.com/in/reyna-murphy-4774771ba/" target="_blank" class="social-button">
+            <img src="../icons/LinkedIn_logo_initials.png" alt="LinkedIn" width="192" height="192" loading="lazy" >
+          </a>
+        </div>
+      </div>
+
+      <div class="resume-button">
+        <div class="social-button-container resume">
+          <a href="../resumes/Reyna_Murphy_Resume_December_2025.pdf" target="_blank"
+            class="social-button">RESUME</a>
+        </div>
+      </div>
+
+    </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- Website scripts -->
+    <script src="../js/app.js" defer></script>
+
+</body>
+
+</html>
