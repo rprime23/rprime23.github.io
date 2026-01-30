@@ -2,54 +2,74 @@
 <html lang="en">
 
 <head>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-SG6WP4DXBC');
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // Delay GA load until browser is idle (or after a short fallback delay)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        function loadGA() {
+            if (window.__gaLoaded) return;
+            window.__gaLoaded = true;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+            s.onload = function () {
+                gtag('js', new Date());
+                gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+            };
+            document.head.appendChild(s);
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA, { timeout: 2000 });
+        } else {
+            setTimeout(loadGA, 1500);
+        }
     </script>
+
+    <script defer src="../js/navbar.js"></script>
+
+    <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development." />
+    <meta name="description"
+        content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development. See some of my animation work." />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    </noscript>
 
     <!--CSS Styles -->
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
 
-    <!-- Animate CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Reyna Murphy</title>
+    <!-- Preload hero images -->
+    <link rel="preload" as="image" href="../images/3D_Art/weebly background.webp"
+        imagesrcset="../images/3D_Art/weebly background.webp" imagesizes="100vw" fetchpriority="high">
+
+    <title>Reyna Murphy - Floor After Floor</title>
 </head>
 
 <body>
     <!-- Navbar -->
 
-    <nav>
-        <h1><a href="/index.html">REYNA MURPHY</a></h1>
-        <ul class="navigation">
-            <li><a href="..\..\index.html#about" class="nav-link">About</a></li>
-            <li><a href="..\..\index.html#skill" class="nav-link">Skills</a></li>
-            <li><a href="..\..\index.html#scroll-projects" class="nav-link">Projects</a></li>
-            <!-- <li><a href="#vr-projects" class="nav-link">VR Projects</a></li>
-              <li><a href="#software-projects" class="nav-link">Software Projects</a></li>
-              <li><a href="#database-projects" class="nav-link">Database Projects</a></li> -->
-            <li><a href="..\pages\education.html" class="nav-link">Relavent Courses</a></li>
-            <li><a href="..\pages\workExperience.html" class="nav-link">Work Experience</a></li>
-            <li><a href="..\..\index.html#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="burger-menu" id="burger-menu">
-            <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
-    </nav>
+    <header>
+        <div id="navbar-placeholder"></div>
+    </header>
 
     <!-- Large Image -->
 
@@ -59,7 +79,8 @@
         <h1>Floor After Floor</h1>
     </div>
 
-    <!-- Description -->
+    <main>
+        <!-- Description -->
 
     <div class="project-desc">
         <p>
@@ -116,21 +137,13 @@
             </div>
         </div>
     </div>
-</body>
+    </main>
 
 <footer></footer>
 
 <!-- Website scripts -->
-<script src="../js/app.js"></script>
+<script src="../js/app.js" defer></script>
 
-<!-- Ion icons scripts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    </body>
 
 </html>
