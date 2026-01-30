@@ -1,133 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <head>
 
-    gtag('config', 'G-SG6WP4DXBC');
-    </script>
+        <!-- Google tag (gtag.js) -->
+        <script>
+            // Delay GA load until browser is idle (or after a short fallback delay)
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development." />
+            function loadGA() {
+                if (window.__gaLoaded) return;
+                window.__gaLoaded = true;
 
-    <!--CSS Styles -->
-    <link rel="stylesheet" href="../css/styles.css" />
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+                s.onload = function () {
+                    gtag('js', new Date());
+                    gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+                };
+                document.head.appendChild(s);
+            }
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA, { timeout: 2000 });
+            } else {
+                setTimeout(loadGA, 1500);
+            }
+        </script>
 
-    <!-- Animate CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Reyna Murphy</title>
-</head>
+        <script defer src="../js/navbar.js"></script>
 
-<body>
+        <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
 
-    <!-- Navbar -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description"
+            content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development. See some of my animation work." />
 
-    <nav>
-        <h1><a href="/index.html">REYNA MURPHY</a></h1>
-        <ul class="navigation">
-            <li><a href="..\..\index.html#about" class="nav-link">About</a></li>
-            <li><a href="..\..\index.html#skill" class="nav-link">Skills</a></li>
-            <li><a href="..\..\index.html#scroll-projects" class="nav-link">Projects</a></li>
-            <!-- <li><a href="#vr-projects" class="nav-link">VR Projects</a></li>
-              <li><a href="#software-projects" class="nav-link">Software Projects</a></li>
-              <li><a href="#database-projects" class="nav-link">Database Projects</a></li> -->
-            <li><a href="..\pages\education.html" class="nav-link">Relavent Courses</a></li>
-            <li><a href="..\pages\workExperience.html" class="nav-link">Work Experience</a></li>
-            <li><a href="..\..\index.html#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="burger-menu" id="burger-menu">
-            <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
-    </nav>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+            media="print" onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+        </noscript>
 
-    <!-- Large Image -->
+        <!--CSS Styles -->
+        <link rel="preload" as="style" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
 
-    <div class="main-page-image">
-        <img src="..\images\Clay_Beats\cb_title.webp" alt="Clay Beats" loading="lazy"
-            class="main-screen-img" />
-        <h1>Clay Beats</h1>
-    </div>
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
 
-    <!-- Description -->
+        <!-- Preload hero images -->
+        <link rel="preload" as="image" href="../images/3D_Art/weebly background.webp"
+            imagesrcset="../images/3D_Art/weebly background.webp" imagesizes="100vw" fetchpriority="high">
 
-    <div class="project-desc">
-        <p>
-            Clay Beats is a casual couch co-op rhythm game where two players take on two kindred cats who aim to become masters of their 
-            craft...pottery! Embark on an adventure, meet new clients, and master your pottery craft. 
-        </p>
-        <p>
-            Clay Beats was created in a studio simulation with a thirty person team. This project was built in Unreal using Unreal
-            blueprinting. I contributed to the team as a rhythm systems and multiplayer engineer.
-        </p>
-    </div>
+        <title>Reyna Murphy - Clay Beats</title>
+    </head>
 
-    <p class="cb-link">
-        Play <a href="https://store.steampowered.com/app/3492920/Clay_Beats/" target="_blank">Clay Beats</a> now!
-    </p>
+    <body>
+        <!-- Navbar -->
 
-    <!-- Image Grid -->
+        <header>
+            <div id="navbar-placeholder"></div>
+        </header>
 
-    <div>
-        <h2 class="projects-title">Images</h2>
-        <div class="row">
-            <div class="column">
-                <img src="..\images\Clay_Beats\cb_envor.jpg"
-                    alt="Clay Beats Environment"
-                    loading="lazy" class="main-screen-img" style="width: 100%" />
+        <main>
+            <!-- Large Image -->
+
+            <div class="main-page-image">
+                <img src="..\images\Clay_Beats\cb_title.webp" alt="Clay Beats" loading="lazy" class="main-screen-img" />
+                <h1>Clay Beats</h1>
             </div>
-            <div class="column">
-                <img src="..\images\Clay_Beats\cb_envir_otter.jpg"
-                    alt="Clay Beats Otter Non-Player Character" loading="lazy"
-                    class="main-screen-img" style="width: 100%" />
-            </div>
-            <div class="column">
-                <img src="..\images\Clay_Beats\cb_corkboard.jpg"
-                    alt="Clay Beats Song Selection Corkboard" loading="lazy"
-                    class="main-screen-img"
-                    style="width: 100%" />
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="column">
-                <img src="..\images\Clay_Beats\cb_rhythm.jpg"
-                alt="Clay Beats Rhythm Gameplay"
-                    loading="lazy" class="main-screen-img" style="width: 100%" />
+            <!-- Description -->
+
+            <div class="project-desc">
+                <p>
+                    Clay Beats is a casual couch co-op rhythm game where two players take on two kindred cats who aim to
+                    become masters of their
+                    craft...pottery! Embark on an adventure, meet new clients, and master your pottery craft.
+                </p>
+                <p>
+                    Clay Beats was created in a studio simulation with a thirty person team. This project was built in
+                    Unreal using Unreal
+                    blueprinting. I contributed to the team as a rhythm systems and multiplayer engineer.
+                </p>
             </div>
-            <div class="column">
-                <img src="..\images\Clay_Beats\cb_rhythm_2.jpg"
-                alt="Clay Beats Start of Rhythm Gameplay" loading="lazy"
-                    class="main-screen-img" style="width: 100%" />
+
+            <p class="cb-link">
+                Play <a href="https://store.steampowered.com/app/3492920/Clay_Beats/" target="_blank">Clay Beats</a> now!
+            </p>
+
+            <!-- Image Grid -->
+
+            <div>
+                <h2 class="projects-title">Images</h2>
+                <div class="row">
+                    <div class="column">
+                        <img src="..\images\Clay_Beats\cb_envor.jpg" alt="Clay Beats Environment" loading="lazy"
+                            class="main-screen-img" style="width: 100%" />
+                    </div>
+                    <div class="column">
+                        <img src="..\images\Clay_Beats\cb_envir_otter.jpg" alt="Clay Beats Otter Non-Player Character"
+                            loading="lazy" class="main-screen-img" style="width: 100%" />
+                    </div>
+                    <div class="column">
+                        <img src="..\images\Clay_Beats\cb_corkboard.jpg" alt="Clay Beats Song Selection Corkboard"
+                            loading="lazy" class="main-screen-img" style="width: 100%" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="..\images\Clay_Beats\cb_rhythm.jpg" alt="Clay Beats Rhythm Gameplay" loading="lazy"
+                            class="main-screen-img" style="width: 100%" />
+                    </div>
+                    <div class="column">
+                        <img src="..\images\Clay_Beats\cb_rhythm_2.jpg" alt="Clay Beats Start of Rhythm Gameplay"
+                            loading="lazy" class="main-screen-img" style="width: 100%" />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</body>
+        </main>
 
-<footer></footer>
 
-<!-- Website scripts -->
-<script src="../js/app.js"></script>
+        <footer></footer>
 
-<!-- Ion icons scripts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+        <!-- Website scripts -->
+        <script src="../js/app.js" defer></script>
+
+    </body>
 
 </html>
