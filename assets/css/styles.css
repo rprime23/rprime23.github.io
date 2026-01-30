@@ -44,7 +44,6 @@ nav h1 {
 @media (max-width: 780px) {
   .bio { min-height: 200px; }
 }
-
 .bio p,
 .more-about p,
 .project-desc p {
@@ -136,6 +135,11 @@ nav ul {
 }
 #navbar-placeholder {
   min-height: 96px;
+}
+@media (max-width: 450px) {
+  #navbar-placeholder {
+    min-height: 144px;
+  }
 }
 .burger-menu {
   border: 0;
