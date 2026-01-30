@@ -212,28 +212,95 @@ function handleResize() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  equalizeImageHeights();
+  const DESKTOP_MQ = window.matchMedia('(min-width: 781px)');
+  let observer = null;
+
+  function setupObserver() {
+    if (observer) return;
+
+    // Optional: Re-equalize when images are lazy-loaded
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.addEventListener('load', () => {
+            setTimeout(equalizeImageHeights, 100);
+          });
+        }
+      });
+    });
+
+    // Observe all project images for lazy loading
+    document.querySelectorAll('.project-pic').forEach(img => {
+      observer.observe(img);
+    });
+  }
+
+  function teardownObserver() {
+    if (!observer) return;
+    observer.disconnect();
+    observer = null;
+  }
+
+  function enableEqualizer() {
+    equalizeImageHeights();
+    window.addEventListener('resize', handleResize);
+    setupObserver();
+  }
+
+  function disableEqualizer() {
+    window.removeEventListener('resize', handleResize);
+    teardownObserver();
+
+    // Remove inline min-heights so mobile layout can flow naturally
+    document.querySelectorAll('.projects .project-pic-container').forEach(container => {
+      container.style.minHeight = '';
+    });
+  }
+
+  function handleMQChange(e) {
+    if (e.matches) {
+      enableEqualizer();
+    } else {
+      disableEqualizer();
+    }
+  }
+
+  // Run only on desktop at load
+  if (DESKTOP_MQ.matches) {
+    enableEqualizer();
+  } else {
+    disableEqualizer();
+  }
+
+  // Respond when crossing the breakpoint
+  if (DESKTOP_MQ.addEventListener) {
+    DESKTOP_MQ.addEventListener('change', handleMQChange);
+  } else {
+    // Safari fallback
+    DESKTOP_MQ.addListener(handleMQChange);
+  }
 });
 
 // Re-equalize on window resize
-window.addEventListener('resize', handleResize);
+// window.addEventListener('resize', handleResize);
 
 // Optional: Re-equalize when images are lazy-loaded
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const img = entry.target;
-      img.addEventListener('load', () => {
-        setTimeout(equalizeImageHeights, 100);
-      });
-    }
-  });
-});
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       const img = entry.target;
+//       img.addEventListener('load', () => {
+//         setTimeout(equalizeImageHeights, 100);
+//       });
+//     }
+//   });
+// });
 
 // Observe all project images for lazy loading
-document.querySelectorAll('.project-pic').forEach(img => {
-  observer.observe(img);
-});
+// document.querySelectorAll('.project-pic').forEach(img => {
+//   observer.observe(img);
+// });
 
 // Export functions for manual triggering if needed
 window.equalizeImageHeights = equalizeImageHeights;
@@ -244,4 +311,3 @@ window.equalizeByImageDimensions = equalizeByImageDimensions;
 //   if (!bio) return;
 //   bio.classList.add("animate__animated", "animate__shakeX");
 // });
-

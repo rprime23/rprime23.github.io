@@ -4,13 +4,30 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC"></script>
   <script>
+    // Delay GA load until browser is idle (or after a short fallback delay)
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-SG6WP4DXBC');
+    function gtag(){ dataLayer.push(arguments); }
+  
+    function loadGA(){
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+  
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+      s.onload = function () {
+        gtag('js', new Date());
+        gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+      };
+      document.head.appendChild(s);
+    }
+  
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA, { timeout: 2000 });
+    } else {
+      setTimeout(loadGA, 1500);
+    }
   </script>
 
   <meta charset="UTF-8" />
@@ -19,21 +36,46 @@
   <meta name="description"
     content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Fonts -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"> -->
+  <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap">
-
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+</noscript>
 
   <!--CSS Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preload" as="style" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/RM_favicon_180x180.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/RM_favicon_32x32.jpg" />
 
-  <!-- Animate CSS CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Preload hero images -->
+  <link rel="preload"
+        as="image"
+        href="assets/images/Backgrounds/bryce_background.webp"
+        imagesrcset="assets/images/Backgrounds/bryce_background.webp"
+        imagesizes="100vw"
+        fetchpriority="high">
+  
+  <link rel="preload"
+        as="image"
+        href="assets/images/Backgrounds/bryce_background_mobile.webp"
+        media="(max-width: 768px)"
+        fetchpriority="high">
+
   <title>Reyna Murphy</title>
 </head>
 
@@ -64,14 +106,21 @@
     <section class="header">
       <div class="header-image">
         <picture>
-          <!-- Mobile: 3x2 vertical image -->
-          <source srcset="assets/images/Backgrounds/bryce_background_mobile.webp" media="(max-width: 768px)">
-
-          <!-- Desktop: 16x9 image -->
-          <img src="assets/images/Backgrounds/bryce_background.webp" width="1920" height="1080"
-            alt="Bryce National Park" fetchpriority="high">
+          <!-- Mobile -->
+          <source
+            srcset="assets/images/Backgrounds/bryce_background_mobile.webp"
+            media="(max-width: 768px)">
+    
+          <!-- Desktop -->
+          <img
+            src="assets/images/Backgrounds/bryce_background.webp"
+            width="1920"
+            height="1080"
+            alt="Bryce National Park"
+            fetchpriority="high"
+            decoding="async">
         </picture>
-
+    
         <div class="centered">
           <h1>Reyna Murphy</h1>
           <h2 class="header-h2">Developer</h2>
@@ -203,7 +252,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/web_app/web_app_small.webp" alt="Web Grading Application" loading="lazy"
-              class="project-pic" style="border: 1px solid black;" />
+              class="project-pic" style="border: 1px solid black;" width="250" height="72" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Web Grading Application</h3>
@@ -216,7 +265,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp"
-              alt="Reyna Murphy Adventures Photography Site" loading="lazy" class="project-pic" />
+              alt="Reyna Murphy Adventures Photography Site" loading="lazy" class="project-pic"  width="250" height="83"/>
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Reyna Murphy Adventures Photography Site</h3>
@@ -230,7 +279,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/work/Active_Deal_Image_small.webp"
-              alt="E-commerce UI Features and Interactive Modules" loading="lazy" class="project-pic" />
+              alt="E-commerce UI Features and Interactive Modules" loading="lazy" class="project-pic" width="250" height="141" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">E-commerce UI Features & Interactive Modules</h3>
@@ -248,7 +297,7 @@
         <div class="project-container project-card featured">
           <div class="project-pic-container">
             <img src="assets/images/portfolio.webp" alt="Reyna Murphy Portfolio Website" loading="lazy"
-              class="project-pic" />
+              class="project-pic" width="250" height="99" />
           </div>
           <div class="project-content-bottom">
             <!-- <div class="project-tags">
@@ -272,7 +321,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/Murphys_Game_Room/Game_Room_Small.webp" alt="Murphy's Game Room Graphic"
-              loading="lazy" class="project-pic" />
+              loading="lazy" class="project-pic" width="250" height="121" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Murphy's Game Room</h3>
@@ -287,7 +336,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/Reyna_Murphy_Adventures/RMA_small.webp"
-              alt="Reyna Murphy Adventures Photography Site Redesign" loading="lazy" class="project-pic" />
+              alt="Reyna Murphy Adventures Photography Site Redesign" loading="lazy" class="project-pic" width="250" height="83" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Reyna Murphy Adventures Photography Site Redesign</h3>
@@ -308,7 +357,7 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Sprite_Editor/spriteEditorSmall.webp" alt="Sprite Editor" loading="lazy"
+            <img src="assets/images/Sprite_Editor/spriteEditorSmall.webp" alt="Sprite Editor" loading="lazy" width="250" height="148"
               class="project-pic" />
           </div>
           <div class="project-content-bottom">
@@ -321,7 +370,7 @@
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/FrogApp/frogAppSmall.webp" alt="Frog App" loading="lazy" class="project-pic" />
+            <img src="assets/images/FrogApp/frogAppSmall.webp" alt="Frog App" loading="lazy" class="project-pic" width="250" height="121" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Frog App</h3>
@@ -341,7 +390,7 @@
         <div class="project-container project-card">
           <div class="project-pic-container">
             <img src="assets/images/lmsHeaderSmall.webp" alt="Learning Management System" loading="lazy"
-              class="project-pic" />
+              class="project-pic" width="250" height="156" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Learning Management System</h3>
@@ -361,7 +410,7 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Zeus_Wrath/ggSmall.webp" alt="zeus' wrath" loading="lazy" class="project-pic" />
+            <img src="assets/images/Zeus_Wrath/ggSmall.webp" alt="zeus' wrath" loading="lazy" class="project-pic" width="250" height="145" />
           </div>
           <div class="project-content-bottom">
             <h3 class="project-title">Greek Game</h3>
@@ -375,7 +424,7 @@
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Floor_After_Floor/FAF_Small.webp" alt="Floor After Floor" loading="lazy"
+            <img src="assets/images/Floor_After_Floor/FAF_Small.webp" alt="Floor After Floor" loading="lazy" width="250" height="118"
               class="project-pic" />
           </div>
           <div class="project-content-bottom">
@@ -390,7 +439,7 @@
         </div>
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Clay_Beats/cb_title_small.webp" alt="zeus' wrath" loading="lazy"
+            <img src="assets/images/Clay_Beats/cb_title_small.webp" alt="zeus' wrath" loading="lazy" width="250" height="117"
               class="project-pic" />
           </div>
           <div class="project-content-bottom">
@@ -412,7 +461,7 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/Return_Home/returnHomeSmall.webp" alt="return-home" loading="lazy"
+            <img src="assets/images/Return_Home/returnHomeSmall.webp" alt="return-home" loading="lazy" width="250" height="97"
               class="project-pic" />
           </div>
           <div class="project-content-bottom">
@@ -433,7 +482,7 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <div class="project-pic-container">
-            <img src="assets/images/youtube/youtubeGamingSmall.webp" alt="Gaming Content Production & Analytics"
+            <img src="assets/images/youtube/youtubeGamingSmall.webp" alt="Gaming Content Production & Analytics" width="150" height="150"
               loading="lazy" class="project-pic" />
           </div>
           <div class="project-content-bottom">
@@ -458,19 +507,19 @@
       <div class="social-buttons">
         <div class="social-button-container">
           <a href="https://github.com/rprime23" target="_blank" class="social-button">
-            <img src="assets/icons/GitHub-Mark-ea2971cee799.png" alt="GitHub">
+            <img src="assets/icons/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="192" height="192" loading="lazy" >
           </a>
         </div>
 
         <div class="social-button-container">
           <a href="mailto:reynamurphy23@gmail.com" target="_blank" class="social-button">
-            <img src="assets/icons/email.png" alt="Email">
+            <img src="assets/icons/email.png" alt="Email" width="192" height="192" loading="lazy" >
           </a>
         </div>
 
         <div class="social-button-container">
           <a href="https://www.linkedin.com/in/reyna-murphy-4774771ba/" target="_blank" class="social-button">
-            <img src="assets/icons/LinkedIn_logo_initials.png" alt="LinkedIn">
+            <img src="assets/icons/LinkedIn_logo_initials.png" alt="LinkedIn" width="192" height="192" loading="lazy" >
           </a>
         </div>
       </div>
