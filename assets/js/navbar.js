@@ -1,4 +1,4 @@
-fetch("assets/page_elements/navbar.html", { cache: "force-cache" })
+fetch("/assets/page_elements/navbar.html", { cache: "force-cache" })
   .then((r) => r.text())
   .then((html) => {
     const mount = document.getElementById("navbar-placeholder");
