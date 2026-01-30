@@ -21,7 +21,24 @@ nav h1 {
 .hero {
   padding: 1rem;
 }
-
+/* .burger-icon {
+  display: block;
+  background-color: var(--bg-color);
+} */
+#burger-menu {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+#burger-menu svg {
+  display: block;
+}
 .hero { align-items: stretch; } /* you already do */
 .bio { min-height: 240px; }     /* adjust until CLS disappears */
 @media (max-width: 780px) {
