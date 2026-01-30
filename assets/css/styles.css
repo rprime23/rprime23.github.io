@@ -117,6 +117,9 @@ nav ul {
   gap: 1.9rem;
   list-style: none;
 }
+#navbar-placeholder {
+  min-height: 96px;
+}
 .burger-menu {
   border: 0;
   background-color: transparent;
