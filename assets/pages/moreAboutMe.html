@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <!-- Google tag (gtag.js) -->
     <script>
         // Delay GA load until browser is idle (or after a short fallback delay)
@@ -31,7 +30,6 @@
     </script>
 
     <script defer src="../js/navbar.js"></script>
-
     <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
 
     <meta charset="UTF-8" />
@@ -65,107 +63,331 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-
     <header>
         <div id="navbar-placeholder"></div>
     </header>
 
     <main>
         <!-- Bio Section -->
+        <section class="hero" id="about">
+            <img src="../images/portraits/overlapped.webp" alt="reyna-murphy" class="hero-img" width="600" height="600"
+                decoding="async" fetchpriority="high" />
+            <div class="bio" id="bio">
+                <h2 class="bio-title">About Me</h2>
+                <p class="bio-text">
+                    My name is Reyna Murphy, and I am a recent graduate of the University of Utah. I majored in Computer
+                    Science with an Emphasis in Games. I'm a website designer and developer who loves bringing creative
+                    ideas to
+                    life through clean, engaging, and high-performing web experiences.
+                </p>
+            </div>
+        </section>
 
-    <section class="hero" id="about">
-      <img src="../images/portraits/overlapped.webp" alt="reyna-murphy" class="hero-img" width="600" height="600"
-        decoding="async" fetchpriority="high" />
-      <div class="bio" id="bio">
-        <h2 class="bio-title">About Me</h2>
-        <p class="bio-text">
-          My name is Reyna Murphy, and I am a recent graduate of the University of Utah. I majored in Computer Science
-          with an Emphasis in Games. I'm a website designer and developer who loves bringing creative ideas to life through clean, engaging, 
-          and high-performing web experiences.
-        </p>
-      </div>
-    </section>
+        <!-- More about -->
+        <section class="more-about">
+            <div class="more-about-container">
 
-    <!-- More about -->
+                <div class="more-container">
+                    <h2>More About Me</h2>
+                    <p>
+                        I became interested in computers after my brother built his own PC. Since then, I have
+                        discovered an
+                        interest in 3D modeling, programming, software development, web development, and game
+                        development.
+                    </p>
+                    <p>
+                        My hobbies include gaming, martial arts, soccer, hiking, and LEGOs.
+                    </p>
+                </div>
 
-    <section class="more-about">
+                <div class="timeline-container">
+                    <h2>My Journey So Far</h2>
 
-      <div class="more-about-container">
-        <img src="../images/more_about/Yosemite_Square.webp" alt="Yosemite Falls" class="circular-image">
+                    <!-- Horizontal timeline: desktop & tablet -->
+                    <img src="../images/more_about/Timeline_Horizontal.webp"
+                        alt="Timeline of Reyna Murphy's journey shown horizontally"
+                        class="timeline-img timeline-horizontal" width="1200" height="347" loading="lazy"
+                        decoding="async">
 
-        <div class="more-container">
-          <h2>More About Me</h2>
-          <p>
-            I became interested in computers after my brother built his own PC. Since then, I have discovered an
-            interest
-            in 3D modeling, programming, software development, web development, and game development.
-          </p>
-          <p>
-            My hobbies include gaming, martial arts, soccer, hiking, and LEGOs.
-          </p>
-          <p>
-            <strong>Fun Facts:</strong>
-          </p>
-          <div class="fun-facts-list">
-            <ul>
-              <li>I have a first degree black belt in taekwondo and a second degree black belt in karate.</li>
-              <li>I have season tickets to the Utah Royals FC women's soccer team. </li>
-              <li>My favorite video game is Mass Effect Legendary Edition.</li>
-              <li>My favorite type of LEGOs are the Speed Champion sets.</li>
-              <li>My favorite National Park is Glacier National Park.</li>
-            </ul>
-          </div>
-        </div>
+                    <!-- Vertical timeline: mobile -->
+                    <img src="../images/more_about/Timeline_Vertical.webp"
+                        alt="Timeline of Reyna Murphy's journey shown vertically" class="timeline-img timeline-vertical"
+                        width="400" height="1200" loading="lazy" decoding="async">
+                </div>
 
-        <img src="../images/more_about/black_belt.webp" alt="Martial Arts Black Belt" class="circular-image">
-      </div>
+                <h3 class="fun-fact-h3">Fun Facts:</h3>
 
-    </section>
+                <!-- NEW shared wrapper for perfect alignment -->
+                <div class="about-grids">
+
+                    <!-- FUN FACTS GRID -->
+                    <div class="fun-facts-grid" role="list" aria-label="Fun facts">
+
+                        <!-- Martial Arts -->
+                        <article class="fun-fact-card" role="listitem" tabindex="0">
+                            <div class="fun-fact-inner">
+
+                                <div class="fun-fact-face fun-fact-front">
+                                    <img class="fun-fact-img" src="../images/more_about/black_belt.webp"
+                                        alt="Martial arts black belt" width="200" height="200" loading="lazy"
+                                        decoding="async">
+                                    <div class="fun-fact-body">
+                                        <h4 class="fun-fact-title">Martial Arts</h4>
+                                        <p class="fun-fact-text">
+                                            I have a first degree black belt in taekwondo and a second degree black belt
+                                            in karate.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="fun-fact-face fun-fact-back">
+                                    <h4 class="fun-fact-title">Martial Arts</h4>
+                                    <p class="fun-fact-text">My favorite form is called <strong>3rd Exam</strong>.</p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- Soccer -->
+                        <article class="fun-fact-card" role="listitem" tabindex="0">
+                            <div class="fun-fact-inner">
+
+                                <div class="fun-fact-face fun-fact-front">
+                                    <img class="fun-fact-img" src="../images/more_about/soccer.webp"
+                                        alt="Soccer ball on a field" width="200" height="200" loading="lazy"
+                                        decoding="async">
+                                    <div class="fun-fact-body">
+                                        <h4 class="fun-fact-title">Soccer</h4>
+                                        <p class="fun-fact-text">
+                                            I have season tickets to the Utah Royals FC women's soccer team.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="fun-fact-face fun-fact-back">
+                                    <h4 class="fun-fact-title">Soccer</h4>
+                                    <p class="fun-fact-text">
+                                        My favorite player of all time is <strong>Becky Sauerbrunn</strong>.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- Mass Effect -->
+                        <article class="fun-fact-card" role="listitem" tabindex="0">
+                            <div class="fun-fact-inner">
+
+                                <div class="fun-fact-face fun-fact-front">
+                                    <img class="fun-fact-img" src="../images/more_about/mass_effect.webp"
+                                        alt="Mass Effect themed image" width="200" height="200" loading="lazy"
+                                        decoding="async">
+                                    <div class="fun-fact-body">
+                                        <h4 class="fun-fact-title">Favorite Game</h4>
+                                        <p class="fun-fact-text">
+                                            My favorite video game is Mass Effect Legendary Edition.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="fun-fact-face fun-fact-back">
+                                    <h4 class="fun-fact-title">Mass Effect</h4>
+                                    <p class="fun-fact-text">
+                                        My favorite player class is <strong>Sentinel</strong>.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- LEGOs -->
+                        <article class="fun-fact-card" role="listitem" tabindex="0">
+                            <div class="fun-fact-inner">
+
+                                <div class="fun-fact-face fun-fact-front">
+                                    <img class="fun-fact-img" src="../images/more_about/Speed_Champions.webp"
+                                        alt="LEGO Speed Champions set" width="800" height="500" loading="lazy"
+                                        decoding="async">
+                                    <div class="fun-fact-body">
+                                        <h4 class="fun-fact-title">LEGO</h4>
+                                        <p class="fun-fact-text">
+                                            My favorite type of LEGO sets are the Speed Champions builds.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="fun-fact-face fun-fact-back">
+                                    <h4 class="fun-fact-title">LEGOs</h4>
+                                    <p class="fun-fact-text">
+                                        I love the <strong>garage Speed Champions</strong> sets.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- Yosemite -->
+                        <article class="fun-fact-card" role="listitem" tabindex="0">
+                            <div class="fun-fact-inner">
+
+                                <div class="fun-fact-face fun-fact-front">
+                                    <img class="fun-fact-img" src="../images/more_about/Yosemite_Square.webp"
+                                        alt="Yosemite National Park landscape" width="800" height="500" loading="lazy"
+                                        decoding="async">
+                                    <div class="fun-fact-body">
+                                        <h4 class="fun-fact-title">National Parks</h4>
+                                        <p class="fun-fact-text">
+                                            My favorite National Park is Yosemite National Park.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="fun-fact-face fun-fact-back">
+                                    <h4 class="fun-fact-title">Yosemite</h4>
+                                    <p class="fun-fact-text">
+                                        My favorite trail was <strong>Mist Trail</strong>.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- WHEELS GRID -->
+                    <div class="wheels-grid">
+
+                        <!-- Martial Arts -->
+                        <section class="wheel-section" aria-labelledby="maWheelTitle">
+                            <h2 id="maWheelTitle">Martial Arts Wheel: Best Martial Arts Type</h2>
+
+                            <div class="wheel-wrap">
+                                <canvas class="spin-wheel" width="420" height="420" data-wheel="martial-arts"></canvas>
+                                <div class="wheel-pointer" aria-hidden="true"></div>
+                                <button class="wheel-center-btn" type="button"
+                                    aria-label="Spin Martial Arts wheel">SPIN</button>
+                            </div>
+
+                            <div class="wheel-result" aria-live="polite">
+                                <h3 class="wheel-result-title">Result</h3>
+                                <p class="wheel-result-text">Click Spin to get a result.</p>
+                            </div>
+                        </section>
+
+                        <!-- Soccer -->
+                        <section class="wheel-section" aria-labelledby="soccerWheelTitle">
+                            <h2 id="soccerWheelTitle">Soccer Wheel: Best Position</h2>
+
+                            <div class="wheel-wrap">
+                                <canvas class="spin-wheel" width="420" height="420" data-wheel="soccer"></canvas>
+                                <div class="wheel-pointer" aria-hidden="true"></div>
+                                <button class="wheel-center-btn" type="button"
+                                    aria-label="Spin Soccer wheel">SPIN</button>
+                            </div>
+
+                            <div class="wheel-result" aria-live="polite">
+                                <h3 class="wheel-result-title">Result</h3>
+                                <p class="wheel-result-text">Click Spin to get a result.</p>
+                            </div>
+                        </section>
+
+                        <!-- Mass Effect -->
+                        <section class="wheel-section" aria-labelledby="meWheelTitle">
+                            <h2 id="meWheelTitle">Mass Effect Wheel: Best Mass Effect Quotes</h2>
+
+                            <div class="wheel-wrap">
+                                <canvas class="spin-wheel" width="420" height="420" data-wheel="mass-effect"></canvas>
+                                <div class="wheel-pointer" aria-hidden="true"></div>
+                                <button class="wheel-center-btn" type="button"
+                                    aria-label="Spin Mass Effect wheel">SPIN</button>
+                            </div>
+
+                            <div class="wheel-result" aria-live="polite">
+                                <h3 class="wheel-result-title">Result</h3>
+                                <p class="wheel-result-text">Click Spin to get a result.</p>
+                            </div>
+                        </section>
+
+                        <!-- LEGO -->
+                        <section class="wheel-section" aria-labelledby="legoWheelTitle">
+                            <h2 id="legoWheelTitle">Best LEGO Cars</h2>
+
+                            <div class="wheel-wrap">
+                                <canvas class="spin-wheel" width="420" height="420" data-wheel="lego"></canvas>
+                                <div class="wheel-pointer" aria-hidden="true"></div>
+                                <button class="wheel-center-btn" type="button"
+                                    aria-label="Spin LEGO wheel">SPIN</button>
+                            </div>
+
+                            <div class="wheel-result" aria-live="polite">
+                                <h3 class="wheel-result-title">Result</h3>
+                                <p class="wheel-result-text">Click Spin to get a result.</p>
+                            </div>
+                        </section>
+
+                        <!-- Yosemite -->
+                        <section class="wheel-section" aria-labelledby="yosemiteWheelTitle">
+                            <h2 id="yosemiteWheelTitle">Best Yosemite Trails</h2>
+
+                            <div class="wheel-wrap">
+                                <canvas class="spin-wheel" width="420" height="420" data-wheel="yosemite"></canvas>
+                                <div class="wheel-pointer" aria-hidden="true"></div>
+                                <button class="wheel-center-btn" type="button"
+                                    aria-label="Spin Yosemite wheel">SPIN</button>
+                            </div>
+
+                            <div class="wheel-result" aria-live="polite">
+                                <h3 class="wheel-result-title">Result</h3>
+                                <p class="wheel-result-text">Click Spin to get a result.</p>
+                            </div>
+                        </section>
+
+                    </div>
+                </div><!-- /.about-grids -->
+
+            </div><!-- /.more-about-container -->
+        </section>
 
         <!-- Contact section -->
+        <section id="contact" name="contact" style="margin-top: 2rem;">
+            <h1>Contact and Links</h1>
 
-    <section id="contact" name="contact" style="margin-top: 2rem;">
-      <h1>Contact and Links</h1>
+            <div class="social-buttons">
+                <div class="social-button-container">
+                    <a href="https://github.com/rprime23" target="_blank" class="social-button">
+                        <img src="../icons/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="192" height="192"
+                            loading="lazy">
+                    </a>
+                </div>
 
-      <div class="social-buttons">
-        <div class="social-button-container">
-          <a href="https://github.com/rprime23" target="_blank" class="social-button">
-            <img src="../icons/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="192" height="192" loading="lazy" >
-          </a>
-        </div>
+                <div class="social-button-container">
+                    <a href="mailto:reynamurphy23@gmail.com" target="_blank" class="social-button">
+                        <img src="../icons/email.png" alt="Email" width="192" height="192" loading="lazy">
+                    </a>
+                </div>
 
-        <div class="social-button-container">
-          <a href="mailto:reynamurphy23@gmail.com" target="_blank" class="social-button">
-            <img src="../icons/email.png" alt="Email" width="192" height="192" loading="lazy" >
-          </a>
-        </div>
+                <div class="social-button-container">
+                    <a href="https://www.linkedin.com/in/reyna-murphy-4774771ba/" target="_blank" class="social-button">
+                        <img src="../icons/LinkedIn_logo_initials.png" alt="LinkedIn" width="192" height="192"
+                            loading="lazy">
+                    </a>
+                </div>
+            </div>
 
-        <div class="social-button-container">
-          <a href="https://www.linkedin.com/in/reyna-murphy-4774771ba/" target="_blank" class="social-button">
-            <img src="../icons/LinkedIn_logo_initials.png" alt="LinkedIn" width="192" height="192" loading="lazy" >
-          </a>
-        </div>
-      </div>
-
-      <div class="resume-button">
-        <div class="social-button-container resume">
-          <a href="../resumes/Reyna_Murphy_Resume_December_2025.pdf" target="_blank"
-            class="social-button">RESUME</a>
-        </div>
-      </div>
-
-    </section>
-
+            <div class="resume-button">
+                <div class="social-button-container resume">
+                    <a href="../resumes/Reyna_Murphy_Resume_December_2025.pdf" target="_blank"
+                        class="social-button">RESUME</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
 
     <!-- Website scripts -->
     <script src="../js/app.js" defer></script>
-
+    <script defer src="../js/wheels.js"></script>
 </body>
 
 </html>
