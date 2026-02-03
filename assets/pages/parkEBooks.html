@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // Delay GA load until browser is idle (or after a short fallback delay)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        function loadGA() {
+            if (window.__gaLoaded) return;
+            window.__gaLoaded = true;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+            s.onload = function () {
+                gtag('js', new Date());
+                gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+            };
+            document.head.appendChild(s);
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA, { timeout: 2000 });
+        } else {
+            setTimeout(loadGA, 1500);
+        }
+    </script>
+
+    <script defer src="../js/navbar.js"></script>
+
+    <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development. See some of my other creative work." />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    </noscript>
+
+    <!--CSS Styles -->
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
+
+    <!-- Preload hero images -->
+    <link rel="preload" as="image" href="../images/3D_Art/weebly background.webp"
+        imagesrcset="../images/3D_Art/weebly background.webp" imagesizes="100vw" fetchpriority="high">
+
+    <title>Reyna Murphy - Photography & Guide Books</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <header>
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+      <!-- Large Image / Header -->
+
+    <div class="main-page-image">
+      <img
+        src="..\images\youtube\gamingYTHeader.webp"
+        alt="National Park Guide and Photography E-Books"
+        loading="lazy"
+        class="main-screen-img"
+        style="width:65%; margin-top:20px;"
+      />
+      <h1>National Park Guide and Photography E-Books</h1>
+    </div>
+
+    <!-- Description -->
+
+    <div class="project-desc">
+      <p>
+        This project is a personal YouTube gaming channel focused on planning, recording,
+        editing, and publishing both short-form and long-form gameplay content.
+        The goal of the project is to build a consistent production pipeline while
+        improving storytelling, pacing, and viewer engagement.
+      </p>
+
+      <p>
+        Through this project, I practice content strategy, basic video editing,
+        thumbnail design, and performance analysis using YouTube Studio analytics.
+        I regularly review metrics such as watch time, audience retention, and
+        engagement to iterate on titles, thumbnails, and video structure.
+      </p>
+
+      <p>
+        This channel is treated as an ongoing learning project rather than a
+        popularity-driven platform, emphasizing consistency, iteration, and
+        measurable improvement over time.
+      </p>
+
+      <p>
+        I use CapCut and Adobe Premiere Pro for video editing, YouTube Studio for analytics, and OBS Studio and Steam's built-in recorder for recording.
+      </p>
+    </div>
+
+    <!-- External Link -->
+
+    <p class="cb-link">
+      Visit the YouTube channel:
+      <a href="https://www.youtube.com/channel/UCieh6CB_SXqoC8jsCzYwm8g" target="_blank" rel="noopener">Gaming, Gaming & More Gaming</a>
+    </p>
+    </main>
+
+    <footer></footer>
+
+  <!-- Website scripts -->
+  <script src="../js/app.js" defer></script>
+
+  </body>
+</html>
