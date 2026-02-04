@@ -66,7 +66,6 @@ a:hover { text-decoration: none; }
 
 html{
   scroll-behavior: smooth;
-  /* Helps prevent intermittent width changes when scrollbar appears/disappears */
   scrollbar-gutter: stable;
 }
 ul{ list-style-type: none; }
@@ -547,8 +546,9 @@ footer{
 
 /* =========================
    HEADER IMAGE (NO MOBILE vh)
-   - Replaces max-height: 100vh (unstable on mobile)
-   - Uses aspect-ratio + stable viewport units (svh)
+   - Desktop: 16:9 like 1920x1080
+   - Mobile: switch to vertical aspect ratio so the mobile asset actually shows
+   - Uses svh (stable viewport) instead of vh
 ========================= */
 .header-image{
   position: relative;
@@ -556,17 +556,20 @@ footer{
   width: 100%;
   overflow: hidden;
 
-  /* lock geometry early to prevent CLS */
+  /* Desktop geometry */
   aspect-ratio: 16 / 9;
 
-  /* desktop-friendly cap without vh */
+  /* cap without vh */
   max-height: 1080px;
 }
 
-/* Use stable viewport units on mobile (no vh) */
-@media (max-width: 780px){
+/* Match your <source media="(max-width: 768px)"> */
+@media (max-width: 768px){
   .header-image{
-    /* keep it within the visible area without vh jitter */
+    /* Typical vertical hero ratio; adjust if your mobile image is different */
+    aspect-ratio: 9 / 16;
+
+    /* stable viewport cap (not vh) */
     max-height: 100svh;
   }
 }
