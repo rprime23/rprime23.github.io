@@ -601,24 +601,87 @@ footer {
   margin-bottom: 1rem;
   font-size: 20px;
 }
+
+/* =========================================================
+   STABLE NO-DISTORTION HERO PATTERN (HEADER HERO)
+   ========================================================= */
+
+/* Make the header hero fill the stable viewport height and crop safely */
 .header-image {
   position: relative;
   color: #fff;
   width: 100%;
-  max-height: 100vh;
   overflow: hidden;
+
+  /* stable mobile viewport height */
+  min-height: 100svh;
+
+  /* allow overlay centering */
+  display: grid;
+  place-items: center;
 }
-.header-image img {
+
+/* Desktop: keep your preferred 100vh behavior */
+@media (min-width: 781px) {
+  .header-image {
+    min-height: 100vh;
+  }
+}
+
+/* The <picture> must be allowed to stretch to the hero height */
+.header-image picture {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
-.centered {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -45%);
+
+/* No distortion: fill the hero, preserve aspect ratio, crop overflow */
+.header-image img,
+.header-hero-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
+
+/* Keep overlay above the image */
+.centered {
+  position: relative;
+  z-index: 1;
+
+  /* Your original centering logic, but stable & simpler */
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+/* Optional: a subtle overlay to help text readability */
+.header-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.35)
+  );
+}
+
+/* Put the text above the overlay */
+.centered h1,
+.centered h2,
+.centered h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Your original title sizes */
 .centered h1 {
   font-size: 7rem;
   margin: 0;
@@ -627,6 +690,11 @@ footer {
   font-size: 3rem;
   margin: 0;
 }
+
+/* =========================================================
+   END HERO PATTERN
+   ========================================================= */
+
 .cb-link {
   margin-bottom: 20px;
 }
