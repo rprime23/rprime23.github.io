@@ -64,7 +64,11 @@ a:hover { text-decoration: none; }
   --transition: 0.3s;
 }
 
-html{ scroll-behavior: smooth; }
+html{
+  scroll-behavior: smooth;
+  /* Helps prevent intermittent width changes when scrollbar appears/disappears */
+  scrollbar-gutter: stable;
+}
 ul{ list-style-type: none; }
 
 a{ color: var(--txt-color); }
@@ -541,18 +545,38 @@ footer{
   font-size: 20px;
 }
 
+/* =========================
+   HEADER IMAGE (NO MOBILE vh)
+   - Replaces max-height: 100vh (unstable on mobile)
+   - Uses aspect-ratio + stable viewport units (svh)
+========================= */
 .header-image{
   position: relative;
   color: #fff;
   width: 100%;
-  max-height: 100vh;
   overflow: hidden;
+
+  /* lock geometry early to prevent CLS */
+  aspect-ratio: 16 / 9;
+
+  /* desktop-friendly cap without vh */
+  max-height: 1080px;
 }
 
+/* Use stable viewport units on mobile (no vh) */
+@media (max-width: 780px){
+  .header-image{
+    /* keep it within the visible area without vh jitter */
+    max-height: 100svh;
+  }
+}
+
+.header-image picture,
 .header-image img{
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .centered{
