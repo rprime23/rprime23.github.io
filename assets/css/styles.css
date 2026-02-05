@@ -363,7 +363,7 @@ footer {
 }
 .main-screen-img {
   width: 100%;
-  height:auto;
+  height: auto;
   margin-top: 1px;
 }
 .main-page-image {
@@ -549,12 +549,12 @@ footer {
   font-size: 48px;
 }
 .job-title h2 {
-    font-size: 16px;
-    margin-bottom: 30px;
-    text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 .web-dev-button {
-  text-align:center;
+  text-align: center;
 }
 .work-ex p {
   width: 60%;
@@ -605,6 +605,44 @@ footer {
 .sub-heading {
   margin-bottom: 1rem;
   font-size: 20px;
+}
+
+/* =========================================================
+   WORK-EX PRODUCT LISTING GRID FIX (keeps width/height attrs)
+   3 across on desktop, 1 across on mobile, centered
+   ========================================================= */
+
+.work-ex .row {
+  justify-content: center; /* center the columns as a group */
+  gap: 10px;               /* spacing between columns */
+}
+
+.work-ex .column {
+  flex: 0 1 33.333%;       /* 3 across, but allowed to shrink */
+  max-width: 33.333%;
+  padding: 0;              /* gap handles spacing */
+  display: flex;
+  justify-content: center; /* center image inside each column */
+}
+
+.work-ex .column a {
+  display: block;
+  width: 100%;
+  max-width: 600px;        /* optional: prevents over-stretching */
+}
+
+.work-ex .column img {
+  display: block;
+  width: 100%;             /* overrides the 600px intrinsic width */
+  height: auto;            /* preserve aspect ratio */
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 780px) {
+  .work-ex .column {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 /* =========================================================
@@ -1050,9 +1088,7 @@ footer {
   letter-spacing: 0.5px;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition:
-    transform 0.18s ease,
-    filter 0.18s ease;
+  transition: transform 0.18s ease, filter 0.18s ease;
   z-index: 2;
 }
 .wheel-center-btn:hover,
