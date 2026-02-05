@@ -1207,11 +1207,3 @@ footer {
     max-width: 420px;
   }
 }
-
-:root{
-  --font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-}
-
-nav{
-  line-height: 1.2;
-}
