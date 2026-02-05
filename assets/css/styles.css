@@ -622,6 +622,14 @@ footer {
 .web-dev-button {
   text-align: center;
 }
+@media (max-width:768px) {
+  .web-dev-button {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .work-ex p {
   width: 60%;
   transform: translate(+30%, 0);
