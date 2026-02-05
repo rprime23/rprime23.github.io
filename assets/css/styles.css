@@ -551,7 +551,7 @@ footer {
 .job-title h2 {
     font-size: 16px;
     margin-bottom: 30px;
-    /* text-align: center; */
+    text-align: center;
 }
 .work-ex p {
   width: 60%;
