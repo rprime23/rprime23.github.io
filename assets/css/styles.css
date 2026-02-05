@@ -553,6 +553,9 @@ footer {
     margin-bottom: 30px;
     text-align: center;
 }
+.web-dev-button {
+  text-align:center;
+}
 .work-ex p {
   width: 60%;
   transform: translate(+30%, 0);
