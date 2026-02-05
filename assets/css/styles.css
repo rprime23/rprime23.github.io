@@ -632,8 +632,7 @@ footer {
 }
 .work-ex p {
   width: 60%;
-  transform: translate(+30%, 0);
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 .work-ex img {
   box-shadow: 0 3px 5px var(--primary-shadow);
