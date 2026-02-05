@@ -363,6 +363,7 @@ footer {
 }
 .main-screen-img {
   width: 100%;
+  height:auto;
   margin-top: 1px;
 }
 .main-page-image {
