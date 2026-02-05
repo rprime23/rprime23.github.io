@@ -395,6 +395,7 @@ footer {
 .work-ex .row {
   justify-content: center;
   gap: 10px;
+  padding: 0 10px;
 }
 
 /* Ensure images fill their column consistently */
