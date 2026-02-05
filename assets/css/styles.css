@@ -511,7 +511,7 @@ footer {
 .cb-link,
 .header-image,
 .job-title h1,
-.job-title h4,
+.job-title h2,
 .skills,
 .sub-heading,
 .work-ex h2,
@@ -548,9 +548,10 @@ footer {
 .job-title h1 {
   font-size: 48px;
 }
-.job-title h4 {
-  font-size: 16px;
-  margin-bottom: 30px;
+.job-title h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+    /* text-align: center; */
 }
 .work-ex p {
   width: 60%;
