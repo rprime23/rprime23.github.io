@@ -136,11 +136,11 @@ nav ul {
   list-style: none;
 }
 #navbar-placeholder {
-  min-height: 96px;
+  height: 96px;
 }
 @media (max-width: 450px) {
   #navbar-placeholder {
-    min-height: 144px;
+    height: 144px;
   }
 }
 .burger-menu {
