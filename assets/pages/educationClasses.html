@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // Delay GA load until browser is idle (or after a short fallback delay)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        function loadGA() {
+            if (window.__gaLoaded) return;
+            window.__gaLoaded = true;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SG6WP4DXBC';
+            s.onload = function () {
+                gtag('js', new Date());
+                gtag('config', 'G-SG6WP4DXBC', { anonymize_ip: true });
+            };
+            document.head.appendChild(s);
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA, { timeout: 2000 });
+        } else {
+            setTimeout(loadGA, 1500);
+        }
+    </script>
+
+    <script defer src="../js/navbar.js"></script>
+
+    <link rel="preload" href="../page_elements/navbar.html" as="fetch" crossorigin="anonymous">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Reyna Murphy — web developer and designer specializing in responsive UI/UX, accessible design, and modern front-end development. See some of my animation work." />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+    </noscript>
+
+    <!--CSS Styles -->
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="..\icons\RM_favicon_180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="..\icons\RM_favicon_32x32.jpg" />
+
+    <!-- Preload hero images -->
+    <link rel="preload" as="image" href="../images/3D_Art/weebly background.webp"
+        imagesrcset="../images/3D_Art/weebly background.webp" imagesizes="100vw" fetchpriority="high">
+
+    <title>Reyna Murphy - Education</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <header>
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+
+    <h1 class="school-title">University of Utah Courses</h1>
+
+      <!-- Computer Science Courses section -->
+
+    <section class="courses" id="cs-courses">
+        <h2 class="courses-title">Computer Science Courses</h2>
+        <div class="courses-container">
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 1420 - Intro to Object-Oriented Programming</h3>
+            <p class="course-details">
+              A class where students are introduced to the principles of object oriented programming using Java. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 2420 - Intro to Algorithms and Data Structures</h3>
+            <p class="course-details">
+                A class where students are introduced to basic algorithms and different data structures in Java. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 3500 - Software Practice</h3>
+            <p class="course-details">
+                A class where students are introduced to basic software practices and development principles in C#. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 3505 - Software Practice II</h3>
+            <p class="course-details">
+                A class where students are continue to develop software development skills and management strategies in C++. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 3810 - Computer Organization</h3>
+            <p class="course-details">
+                A class where students learn about the hardware architecture of a computer and do some assembly coding in MIPS.  
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 4150 - Algorithms</h3>
+            <p class="course-details">
+                A class where students study and practice implementing common algorithms in a language of their choice. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 4400 - Computer Systems</h3>
+            <p class="course-details">
+                A class where students practice manipulating memory and optimization in C. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 5360 - Virtual Reality</h3>
+            <p class="course-details">
+              A class that focuses primarily on the theory and programming behind virtual realtiy headsets and games. This class involves programming 
+              virtual reality priciples such as foveated rendering and building a virtual reality experience in Unity game engine.  
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 5530 - Databases</h3>
+            <p class="course-details">
+              A class that introduces students to relational databases. Covering topics such as ER diagrams and creating schemas students are involved with all 
+              process of creating a database. This class uses MySQL to manipulate the table data and C# and Microsoft Visual Studio for deployment. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 4300 - Artificial Intelligence</h3>
+            <p class="course-details">
+                A class where students learn about the basic algorithms, startegies and practices about designing and creating AI agents.  
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 3540 - Designing Human Centered Systems</h3>
+            <p class="course-details">
+              In this course, students are introduced to the fundamentals of the field of Human-Centered Computing. In this course, students are exposed to including iterative design and accessibility. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 5460 - Operating Systems</h3>
+            <p class="course-details">
+              Characteristics, objectives, and issues concerning computer operating systems. Hardware-software interactions, process management, memory management, protection, synchronization, resource allocation, file systems, security, and distributed systems.
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 3350 - Web Development I</h3>
+            <p class="course-details">
+              Students explore the full stack of web software technology from the back end to the front end, including fundamental web security issues, database integration, and client-side page manipulation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Courses section -->
+
+    <section class="courses" id="game-courses">
+        <h2 class="courses-title">Game Courses</h2>
+        <div class="courses-container">
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 1050 - Digital Content Creation</h3>
+            <p class="course-details">
+              A basic introduction to creating assets for games. This class included introductions to Maya, ZBrush, Adobe Photoshop, and Adobe Illustrator.
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 2100 - Intro to Game Design</h3>
+            <p class="course-details">
+              An introduction to basic game design principles. This class involved a lot of practice with iteration and balancing games. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 3010 - Asset Pipeline</h3>
+            <p class="course-details">
+              An introduction to how assets are pipelined with games. This class involved modeling in Maya, texturing in Photoshop, and placing assets 
+              and adding materials in Unreal Engine. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 3660 - Interactive Machinima</h3>
+            <p class="course-details">
+              A class where students develop a machinima animation that is rendered in Unreal Game Engine. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 3710 - Traditional Game Development</h3>
+            <p class="course-details">
+              A class where students create games that fit in the category of for entertainment games. Students design, program, and 
+              create the art assets for the game. 
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">EAE 3720 - Alternative Game Development</h3>
+            <p class="course-details">
+              A class where students create a game focused on something other than entertainment. Students design, program, and 
+              create the art assets for the game.
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">CS 5360 - Virtual Reality</h3>
+            <p class="course-details">
+              A class that focused primarily on the theory and programming behind virtual realtiy headsets and games. This class involved programming 
+              virtual reality priciples such as foveated rendering and building a virtual reality experience in Unity game engine.  
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">GAMES 4500 - Capstone I</h3>
+            <p class="course-details">
+              A class where students create games in a studio simulation. Students work in teams of around 30 to create an industry style game across 2 semesters.  
+            </p>
+          </div>
+
+          <div class="course-container course-card">
+            <h3 class="course-title">GAMES 4510 - Capstone II</h3>
+            <p class="course-details">
+              A class where students create games in a studio simulation. Students work in teams of around 30 to create an industry style game across 2 semesters.  
+            </p>
+          </div>
+        </div>
+      </section>
+
+      </main>
+
+    <!-- Footer section -->
+
+  <footer>
+
+  </footer>
+
+    <!-- Website scripts -->
+    <script src="../js/app.js" defer></script>
+  </body>
+</html>
